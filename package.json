@@ -1,10 +1,9 @@
 {
   "name": "wie-gaming",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass sass/main.scss css/main.css -w",
+    "start": "node-sass sass/navbar.scss css/navbar.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +11,15 @@
   "license": "ISC",
   "dependencies": {
     "node-sass": "^7.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddieWEB/WIEGAMING.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EddieWEB/WIEGAMING/issues"
+  },
+  "homepage": "https://github.com/EddieWEB/WIEGAMING#readme",
+  "description": ""
 }

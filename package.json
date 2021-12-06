@@ -1,16 +1,15 @@
 {
   "name": "wie-gaming",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass sass/main.scss css/main.css -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node-sass -o css -w sass"
   },
   "keywords": [],
-  "author": "",
+  "author": "Grupp 4",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "node-sass": "^7.0.0"
   }
 }

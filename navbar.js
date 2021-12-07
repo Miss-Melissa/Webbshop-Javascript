@@ -1,8 +1,10 @@
 function toggleHamburger() {
-    const toggle = document.querySelector(".navbar");
-    if (toggle.style.display === "block") {
-      toggle.style.display = "none";
-    } else {
-      toggle.style.display = "block";
-    }
+  const mainMenu = document.querySelector(".mainMenu");
+  if (mainMenu.style.display === "block") {
+      mainMenu.style.display = "none";
+  } else {
+      mainMenu.style.display = "block";
   }
+}
+
+document.querySelector(".hamburger").addEventListener("click", toggleHamburger)

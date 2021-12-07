@@ -16,7 +16,7 @@
 
 // nedan är alltså hela ytan när man trycker på knappen, inte själva varukorgen.
 .varukorg-modal {
-    // display: none;
+    display: none;
     position: fixed;
     z-index: 1;
     right: 0;
@@ -36,7 +36,7 @@
 }
 
 .close-btn{
-    float:right;
+    float: right;
     margin-right: 1rem;
     font-size: 3rem;
     color: #ccc;

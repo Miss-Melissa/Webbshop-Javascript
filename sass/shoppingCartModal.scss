@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#modal-btn {
+    background-color: coral;
+    padding: 10px 20px;
+    color: whitesmoke;
+}
+
+#modal-btn:hover {
+    background-color: #333;
+}
+
+// nedan är alltså hela ytan när man trycker på knappen, inte själva varukorgen.
+.varukorg-modal {
+    // display: none;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 0; // påverkar inget just nu så länge det inte är 0, då läggs den över knappen
+    width: 100%;
+    overflow: auto; // gör så att sidan förlängs om det finns massa innehåll.
+    background-color: rgba(151, 143, 143, 0.5); // opacity 0.5
+}

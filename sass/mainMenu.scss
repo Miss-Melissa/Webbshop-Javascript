@@ -7,4 +7,19 @@
     left: 0;
     background: #6E7371;
     display: none;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.liNav {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.aNav {
+    text-decoration: none;
+    color: #1a1e26;
 }

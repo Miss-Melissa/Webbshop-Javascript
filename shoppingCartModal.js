@@ -1,10 +1,10 @@
 // selectors
 const modal = document.querySelector(".varukorg-modal");
-const testBtn = document.querySelector("#modal-btn");
+const varukorgKnapp = document.querySelector(".fa-shopping-cart");
 const closeVarukorgModal = document.querySelector(".close-btn");
 
 //addeventlistener för att öppna modalen
-testBtn.addEventListener("click", openVarukorg);
+varukorgKnapp.addEventListener("click", openVarukorg);
 closeVarukorgModal.addEventListener("click", closeVarukorg);
 
 // addeventlistener för att stänga om man klickar utanför

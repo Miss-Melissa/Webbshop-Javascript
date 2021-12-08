@@ -75,5 +75,22 @@
     margin: 1rem auto;
     padding: 1rem;
 }
+
+.to-checkout {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-checkout {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    align-self: center;
+}
+
+.wishlist-suggestions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 //längst ned
 @import "mediaqueries.scss";

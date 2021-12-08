@@ -1,7 +1,38 @@
 @media screen and (min-width: $breakpoint-ipad) {
     .varukorg-modal-content {
-        background-color: blue;
-        width: 30%;
+        animation-name: none; // vill bli av med animation från mobil.
+        width: 55%;
+        float: right;
+        height: 100%;
+        margin:0;
+
+        //nedan funkar inte än.
+        /* animation-name: slidein;
+        transition: 2s;
+        animation-duration: 2s;    */    
+    }
+
+    //vill att den ska slidea in för höger ist för att gå från 0-1 opacity
+    /*@keyframes slidein {
+        0% {
+            transform: right(0%);
+        }
+        100% {
+            transform: right(-30%);
+        } 
+    }*/
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+    .varukorg-modal-content {
+        width:40%;
     }
 
 }
+
+@media screen and (min-width: $breakpoint-max) {
+    .varukorg-modal-content {
+        width:35%;
+    }
+}
+

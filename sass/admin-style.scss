@@ -1,0 +1,40 @@
+.admin-controls {
+    padding: 20px 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    height: 78px;
+
+    form{
+        max-width: 440px;
+    }
+}
+
+.col-container {
+    display: flex;
+    justify-content: space-between;
+    
+
+    .left-col, .right-col{
+        max-width: 440px;
+        width: 100%;
+    }
+
+    .right-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        color: white;
+        height: 400px;
+
+    }
+}
+
+#input-form{
+  max-width: 900px;
+  margin: auto;  
+}
+
+

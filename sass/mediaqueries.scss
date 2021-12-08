@@ -1,2 +1,7 @@
-@media screen and (min-width: $breakpoint-desktop) {
+@media screen and (min-width: $breakpoint-ipad) {
+    .varukorg-modal-content {
+        background-color: blue;
+        width: 30%;
+    }
+
 }

@@ -1,5 +1,4 @@
 @import "variable.scss";
-@import "mediaqueries.scss";
 
 * {
     padding: $padding;
@@ -76,3 +75,5 @@
     margin: 1rem auto;
     padding: 1rem;
 }
+//längst ned
+@import "mediaqueries.scss";

@@ -1,3 +1,8 @@
+//Skapat en klass för att hämta bilder från imgur.com 
+//Skapade sedan en metod, getImage, som först ser tittar om id angetts annars stoppas koden med return. 
+//Om id inkluderar imgur splittras url länken vid com/ och hämtar array nummer 1, vilket blir ett id nummer.
+//Fetchar sedan url länken till imgur + id för att få vald bild. 
+//catch fångar upp möjliga errors och alertar isåfall dessa
 class ImageAPI {
     constructor() {
         this.headers = new Headers();
@@ -10,7 +15,7 @@ class ImageAPI {
             method: 'GET',
             headers: this.headers
         }).then(response => response.json())
-        .catch(err => alert(`Could not recive image, error: ${err}`));
+        .catch(err => alert(err));
     }
 }
 

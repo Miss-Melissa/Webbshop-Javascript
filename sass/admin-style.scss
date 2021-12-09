@@ -1,3 +1,4 @@
+//Flexbox på knapparna/inputs högst upp på sidan
 .admin-controls {
     padding: 20px 0;
     margin: auto;
@@ -11,6 +12,7 @@
     }
 }
 
+//Container för resten av sidan, här också flex
 .col-container {
     display: flex;
     justify-content: space-between;
@@ -27,7 +29,7 @@
         align-items: center;
         background-color: gray;
         color: white;
-        height: 400px;
+        height: 440px;
 
     }
 }

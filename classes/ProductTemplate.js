@@ -1,3 +1,4 @@
+//En klass som fungerar som en mall, här finns alla keys till produkterna 
 class ProductTemplate {
     constructor(_productObj) {
         _productObj = _productObj ? _productObj : {};

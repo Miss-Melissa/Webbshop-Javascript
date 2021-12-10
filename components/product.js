@@ -4,7 +4,7 @@ class Product extends HTMLElement {
 
     }
     connectedCallback() {
-        console.log(this.data);
+        if(!this.data) return this.innerHTML = '<div style="text-align: center; width:100%">Missing Data</div>';
 
         let productTitle = document.createElement("div");
         productTitle.className = "product-title";
@@ -13,7 +13,6 @@ class Product extends HTMLElement {
         let wishlistBtn = document.createElement("div");
         wishlistBtn.className = "bi bi-suit-heart";
         wishlistBtn.addEventListener("click", (e) => {
-            console.log(e.target.className);
             e.target.className = (e.target.className === "bi bi-suit-heart") ? "bi bi-suit-heart-fill" : "bi bi-suit-heart";
         });
 
@@ -35,9 +34,6 @@ class Product extends HTMLElement {
         this.appendChild(productImg);
         this.appendChild(productPrice);
         this.appendChild(productShortDescription);
-
-        
-       
     };
 }
 

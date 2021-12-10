@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,18 +15,29 @@
     <script src="./components/product.js"></script>
     <title>TEST PRODUCT</title>
 </head>
+
 <body>
     <script type="module">
 
         import ProductHandler from './classes/ProductHandler.js';
         const ph = new ProductHandler();
-        let tagg = document.createElement("product-card");
-        ph.products[0].shortDescription = "G305 Lightspeed Trådlös Gamingmus";
-        tagg.data = ph.products[0];
-        document.querySelector('body').appendChild(tagg);
-        
+        let tag = document.createElement("product-card");
+        tag.data = ph.products[0];
+        document.querySelector('body').appendChild(tag);
+
+        console.log(ph);
+
+        /* ph.getRandom()
+        console.log(" ------------------------------------ ");
+        ph.getRandom()
+        console.log(" ------------------------------------ ");
+        ph.getRandom()
+        console.log(" ------------------------------------ ");
+        ph.getRandom() */
+
     </script>
 
     <div></div>
 </body>
+
 </html>

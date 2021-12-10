@@ -3,6 +3,7 @@
 class ProductHandler {
     constructor() {
         this.products = JSON.parse(localStorage.getItem('products')) || [];
+        this.randomList = [];
     }
 
     // saveData sparar ner till localstorage 
@@ -16,7 +17,34 @@ class ProductHandler {
         this.saveData();
     }
 
-    
-}
+    getByID(id) {
+        return this.products.find(product => product.id === id);
+    }
 
+    getByCategory(category) {
+        return this.products.filter(product => product.category === category);
+    }
+
+    getByPriceRange(minPrice, maxPrice) {
+        return this.products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+    }
+
+    getRandom() {
+        let randomNum = Math.floor(Math.random() * this.products.length);
+        console.log('current random number', randomNum);
+        console.log('List of used random numbers already used', this.randomList);
+        console.log('available product count', this.products.length);
+        console.log('Already used product count', this.randomList.length);
+        if (this.randomList.indexOf(randomNum) === -1) {
+            this.randomList.push(randomNum);
+            return this.products[randomNum];
+        }
+        else if (this.randomList.length < this.products.length) {
+            return this.getRandom();
+        }
+
+    }
+
+
+}
 export default ProductHandler;

@@ -18,7 +18,8 @@ class Product extends HTMLElement {
 
         let productImg = document.createElement("img");
         productImg.className = "product-img";
-        productImg.setAttribute("src", this.data.thumbnail)
+        productImg.setAttribute("src", this.data.thumbnail);
+        productImg.setAttribute("referrerpolicy", "no-referrer");
 
         let productPrice = document.createElement("div");
         productPrice.className = "product-price";

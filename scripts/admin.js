@@ -32,19 +32,19 @@ Object.keys(form).forEach(key => {
     form[key].value = product[key];
 });
 
-//OBS TA BORT
-var title = ["BenQ", "Samsung", "AOC", "Philips", "LG"]
-form.title.value = title[Math.floor(Math.random() * title.length)] + " Datorskärm";
-form.price.value = Math.floor(Math.random() * (1000 - 200) + 200) * 10;
-form.stock.value = Math.floor(Math.random() * (20 - 0));
+//För att enkelt kunna spara ner dummy data till localstorage
+/* var title = ["Microsoft", "Nintendo", "XBOX", "Sony"];
+form.title.value = title[Math.floor(Math.random() * title.length)];
+form.price.value = Math.floor(Math.random() * (350 - 50) + 50) * 10;
+form.stock.value = Math.floor(Math.random() * (20 - 0)); */
 
-//OBS TA BORT
-try {
+//Hämtar LoremIpsum text för dummy description
+/* try {
     fetch('https://loripsum.net/api/3/short', { mode: 'cors' })
         .then(req => req.text())
         .then(resp => form.description.value = 'PRODUKTBESKRIVNING\n\n' + resp)
         .catch(e => console.log(e));
-}catch(err){console.log('Cors plugin ej aktiverad')};
+}catch(err){console.log('Cors plugin ej aktiverad')}; */
 
 
 //Populerar select dropdown med options i html
@@ -55,8 +55,8 @@ productCategories.forEach(category => {
     form.category.appendChild(option);
 });
 
-//OBS TA BORT
-form.category.value = "Skärmar";
+//För att enkelt kunna spara ner dummy data till localstorage
+//form.category.value = "Konsoler";
 
 //Lägger till ett clickevent på "lägg till produkt" knappen
 document.querySelector("#add-product-btn").addEventListener('click', (e) => {

@@ -1,8 +1,13 @@
 @import "./style.scss";
 
 body{
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
     background-color: whitesmoke;
-    color: #333;
+    color: #333; 
 }
 
 

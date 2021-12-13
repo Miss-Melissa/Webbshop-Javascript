@@ -3,17 +3,24 @@
 class ProductHandler {
     constructor() {
         this.products = JSON.parse(localStorage.getItem('products')) || [];
+        this.wishCart = JSON.parse(localStorage.getItem('wishcart')) || [];
         this.randomList = [];
     }
 
     // saveData sparar ner till localstorage 
     saveData() {
         localStorage.setItem('products', JSON.stringify(this.products));
+        localStorage.setItem('wishcart', JSON.stringify(this.cart));
     }
 
     //addProduct pushar in ny data som läggs till
     addProduct(newProduct) {
         this.products.push(newProduct);
+        this.saveData();
+    }
+
+    addToCart(newProduct) {
+        this.cart.push(newProduct);
         this.saveData();
     }
 
@@ -42,9 +49,6 @@ class ProductHandler {
         else if (this.randomList.length < this.products.length) {
             return this.getRandom();
         }
-
     }
-
-
 }
 export default ProductHandler;

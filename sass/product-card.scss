@@ -1,13 +1,14 @@
 @import "./style.scss";
 
 body{
-    max-width: 1000px;
+    max-width: 1000px; 
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     background-color: whitesmoke;
     color: #333; 
+    font-family: oswald;
 }
 
 
@@ -19,7 +20,7 @@ product-card{
     padding: 15px;
     background-color: white;
     box-shadow: 0px 5px 5px rgb(230, 230, 230);
-    max-width: 250px;
+    max-width: 250px; 
     
     .product-title{
         font-size: 1.2em;

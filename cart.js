@@ -1,66 +1,62 @@
-const itemList = document.querySelector("#item-list")
-const itemName = document.querySelector("#item-name")
-const itemPrice = document.querySelector("#item-price")
-const itemQty = document.querySelector("#item-qty")
+const productList = document.querySelector("#product-list")
+const productName = document.querySelector("#product-name")
+const productPrice = document.querySelector("#product-price")
+const productQty = document.querySelector("#product-qty")
 const purchase = document.querySelector(".purchase-button")
 const cartTotal = document.querySelector("#cart-total")
-const cartStr = localStorage.getItem("cart")
-const incomingCart = JSON.parse(cartStr)
-const cart = incomingCart
-
-/* ******* showItems gör att det som finns i de inkommande arrayerna visas direkt utan att man behöver klicka någonstans ****
-funktionen showItem finns längre ned i den här koden.
+const cart = JSON.parse(localStorage.getItem("cart")) || []
+/* ******* showproducts gör att det som finns i de inkommande arrayerna visas direkt utan att man behöver klicka någonstans ****
+funktionen showproduct finns längre ned i den här koden.
 */
-showItem()
-
+showProduct()
 // --------------------------------------------------------------------
 // Handle remove and +/- buttons
-itemList.onclick = function(e) {
+productList.onclick = function(e) {
     if(e.target && e.target.classList.contains("remove")) {
         const name = e.target.dataset.name
-        removeItem(name)
+        removeProduct(name)
     } else if(e.target && e.target.classList.contains("add-one")) {
         const name = e.target.dataset.name
-        addItem(name)
+        addProduct(name)
     } else if(e.target && e.target.classList.contains("remove-one")) {
         const name = e.target.dataset.name
-        removeItem(name, 1)
+        removeProduct(name, 1)
     }
 }
 
 // --------------------------------------------------------------------
-// ADD ITEM
-function addItem(name, price) {
+// ADD product
+function addProduct(name, price) {
     for(let i=0; i < cart.length; i+=1) {
         if(cart[i].name === name) {
             cart[i].qty +=1
-            showItem()
+            showProduct()
             return
         }
     }
-    const item = {name, price, qty: 1} //**************************FIX********
-    cart.push(item)
-    showItem()
+    const product = {name, price, qty: 1}
+    cart.push(product)
+    
+    showProduct()
 }
 
 // --------------------------------------------------------------------
-// SHOW ITEM
-function showItem() {
-    itemQty.innerHTML = `You have ${getQty()} items in your cart`
-    let itemStr = ""
+// SHOW product
+function showProduct() {
+    productQty.innerHTML = `You have ${getQty()} products in your cart`
+    let productStr = ""
     for (let i=0; i < cart.length; i+=1) {
         const {name, price, qty} = cart[i]
 
-        itemStr += `<li>${name} $${price} x ${qty} = $${qty * price} 
+        productStr += `<li>${name} $${price} x ${qty} = $${qty * price} 
         <button class="remove" data-name="${name}">Remove</button>
         <button class="add-one" data-name="${name}">+</button>
         <button class="remove-one" data-name="${name}">-</button>
         </li>`
     }
-    itemList.innerHTML = itemStr
+    productList.innerHTML = productStr
     cartTotal.innerHTML = `Cart total: ${getTotal()}`
 }
-
 // --------------------------------------------------------------------
 // GET QTY
 function getQty() {
@@ -82,9 +78,9 @@ function getTotal() {
 }
 
 // --------------------------------------------------------------------
-// REMOVE ITEM
+// REMOVE product
 
-function removeItem(name, qty = 0) {
+function removeProduct(name, qty = 0) {
     for(let i=0; i < cart.length; i+=1) {
         if(cart[i].name === name) {
             if(qty > 0) {
@@ -93,29 +89,28 @@ function removeItem(name, qty = 0) {
             if(cart[i].qty < 1 || qty === 0) {
                 cart.splice(i, 1)
             }
-            showItem()
+            showProduct()
             return
         }
     }
 }
-
 // --------------------------------------------------------------------
-// BUTTON THAT ADD CART TO LOCAL STORAGE. ALSO CLEAR THE WISHLIST ARRAY.
+// BUTTON THAT ADD CART TO LOCAL STORAGE.
 purchase.onclick = function(e) {
     if(e.target && e.target.classList.contains("purchase-button")) {
         localStorage.setItem("cart", JSON.stringify(cart))
     }
-    showItem()
+    showProduct()
     console.log("fungerar")
 }
 
 // --------------------------------------------------------------------
 // TEST PRODUCTS
 /*
-addItem("Game", 2)
-addItem("Chair", 1)
-addItem("Game", 2)
-addItem("Laptop", 4)
-addItem("Game", 2)
-addItem("Chair", 1)
+addproduct("Game", 2)
+addproduct("Chair", 1)
+addproduct("Game", 2)
+addproduct("Laptop", 4)
+addproduct("Game", 2)
+addproduct("Chair", 1)
 */

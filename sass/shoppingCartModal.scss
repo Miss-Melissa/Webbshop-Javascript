@@ -4,6 +4,8 @@
     padding: $padding;
     margin: $margin;
     box-sizing: $boxSizing;
+    font-family: $fontSize;
+    color: $color;
 }
 
 .fa-shopping-cart {
@@ -30,7 +32,7 @@
 }
 
 .varukorg-modal-content {
-    background-color: #f4f4f4;
+    background-color: whitesmoke;
     margin: 5% auto;
     width: 95%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17); // ser ni något?
@@ -45,7 +47,11 @@
 
 .modal-header {
     padding: 2rem;
-    background-color: #A1A69C;
+    background-color: $c1-blue;
+}
+
+.modal-header > h2 {
+    color:whitesmoke;
 }
 
 .close-btn{
@@ -53,7 +59,7 @@
     margin-right: 2rem;
     margin-top:-1rem;
     font-size:3rem; 
-    color: rgb(238, 238, 238);
+    color: whitesmoke;
 }
 
 .close-btn:hover, .close-btn:focus {
@@ -68,12 +74,15 @@
 }
 
 .modal-summa {
-    background-color: #343A40;
+    background-color: $c3-light-grey;
     text-align: center;
-    color:whitesmoke;
     width: 60%;
     margin: 1rem auto;
     padding: 1rem;
+}
+
+.modal-summa > h3 {
+    color:whitesmoke;
 }
 
 .to-checkout {
@@ -83,14 +92,24 @@
 
 .btn-checkout {
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 1rem 2rem;
     align-self: center;
+    cursor: pointer;
+    background-color: $c5-yellow;
+    color: whitesmoke;
 }
 
+.btn-checkout:active{
+    background-color: $c4-red;
+}
+
+
 .wishlist-suggestions {
-    display: flex;
     justify-content: center;
     text-align: center;
+    padding: 2rem;
 }
+
 //längst ned
 @import "mediaqueries.scss";
+

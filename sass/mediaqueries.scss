@@ -1,3 +1,5 @@
+@import "variable.scss";
+
 @media screen and (min-width: $breakpoint-ipad) {
     .varukorg-modal-content {
         animation-name: none; // vill bli av med animation från mobil.

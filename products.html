@@ -10,40 +10,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
         defer></script>
-    <script src="./default-product-data.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/product-card.css">
-    <script src="./components/product.js"></script>
+    <script defer src="./default-product-data.js"></script>
+    <script defer type="module" src="./scripts/products.js"></script>
+    <script defer src="./components/product-card.js"></script>
     <title>TEST PRODUCT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <script type="module">
-
-        import ProductHandler from './classes/ProductHandler.js';
-        const ph = new ProductHandler();
-        ph.products.forEach(product => {
-            if (!product.id) return;
-            let tag = document.createElement("product-card");
-            tag.data = product;
-            document.querySelector('body').appendChild(tag);
-            console.log(tag.data);
-        });
-       
-
-        /* ph.getRandom()
-        console.log(" ------------------------------------ ");
-        ph.getRandom()
-        console.log(" ------------------------------------ ");
-        ph.getRandom()
-        console.log(" ------------------------------------ ");
-        ph.getRandom() */
-
-    </script>
+    
 </head>
 
 <body>
-
 
 
 </body>

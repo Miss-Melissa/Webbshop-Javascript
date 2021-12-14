@@ -5,12 +5,17 @@ const productQty = document.querySelector("#product-qty")
 const purchase = document.querySelector(".purchase-button")
 const cartTotal = document.querySelector("#cart-total")
 const cart = JSON.parse(localStorage.getItem("cart")) || []
-/* ******* showproducts gör att det som finns i de inkommande arrayerna visas direkt utan att man behöver klicka någonstans ****
-funktionen showproduct finns längre ned i den här koden.
-*/
+
 showProduct()
+
 // --------------------------------------------------------------------
-// Handle remove and +/- buttons
+// setItem cart to local storage
+function setCartLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// --------------------------------------------------------------------
+// HANDLE BUTTON CLICKS ON PRODUCTS
 productList.onclick = function(e) {
     if(e.target && e.target.classList.contains("remove")) {
         const name = e.target.dataset.name
@@ -18,6 +23,7 @@ productList.onclick = function(e) {
     } else if(e.target && e.target.classList.contains("add-one")) {
         const name = e.target.dataset.name
         addProduct(name)
+        setCartLocalStorage()
     } else if(e.target && e.target.classList.contains("remove-one")) {
         const name = e.target.dataset.name
         removeProduct(name, 1)
@@ -25,7 +31,16 @@ productList.onclick = function(e) {
 }
 
 // --------------------------------------------------------------------
-// ADD product
+// BUTTON THAT ADD CART TO LOCAL STORAGE.
+purchase.onclick = function(e) {
+    if(e.target && e.target.classList.contains("purchase-button")) {
+        setCartLocalStorage()
+    }
+    showProduct()
+}
+
+// --------------------------------------------------------------------
+// ADD PRODUCT TO CART
 function addProduct(name, price) {
     for(let i=0; i < cart.length; i+=1) {
         if(cart[i].name === name) {
@@ -41,7 +56,7 @@ function addProduct(name, price) {
 }
 
 // --------------------------------------------------------------------
-// SHOW product
+// SHOW PRODUCT
 function showProduct() {
     productQty.innerHTML = `You have ${getQty()} products in your cart`
     let productStr = ""
@@ -78,7 +93,7 @@ function getTotal() {
 }
 
 // --------------------------------------------------------------------
-// REMOVE product
+// REMOVE PRODUCT
 
 function removeProduct(name, qty = 0) {
     for(let i=0; i < cart.length; i+=1) {
@@ -89,28 +104,9 @@ function removeProduct(name, qty = 0) {
             if(cart[i].qty < 1 || qty === 0) {
                 cart.splice(i, 1)
             }
+            setCartLocalStorage()
             showProduct()
             return
         }
     }
 }
-// --------------------------------------------------------------------
-// BUTTON THAT ADD CART TO LOCAL STORAGE.
-purchase.onclick = function(e) {
-    if(e.target && e.target.classList.contains("purchase-button")) {
-        localStorage.setItem("cart", JSON.stringify(cart))
-    }
-    showProduct()
-    console.log("fungerar")
-}
-
-// --------------------------------------------------------------------
-// TEST PRODUCTS
-/*
-addproduct("Game", 2)
-addproduct("Chair", 1)
-addproduct("Game", 2)
-addproduct("Laptop", 4)
-addproduct("Game", 2)
-addproduct("Chair", 1)
-*/

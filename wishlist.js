@@ -5,24 +5,37 @@ const productQty = document.querySelector("#product-qty")
 const wishlistTotal = document.querySelector("#wishlist-total")
 const addAllToCart = document.querySelector(".add-all-to-cart")
 
-/* ********** Det här ska ersätta det som står nedanför när det finns en wishlist array att hämta från produktsidan ********
-*******DUBBELKOLLA addProductCart funktionen så att den passar med detta*********************
+const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [{name: "Game", price: 2, qty: 1}, {name: "Chair", price: 3, qty: 1}]
+const cart = JSON.parse(localStorage.getItem("cart")) || [{name: "Laptop", price: 4, qty: 1}]
 
-const wishlist = JSON.parse(localStorage.getProduct("wishlist")) || [];
-const cart = JSON.parse(localStorage.getProduct("cart")) || []
-*/
-/* DUMMY DATA: {name: "Game", price: 2, qty: 1}, {name: "Laptop", price: 4, qty: 1}, {name: "Chair", price: 3, qty: 1}, {name: "Konsol", price: 10, qty: 1} */ 
-const wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
-const cart = JSON.parse(localStorage.getItem("cart")) || []
-
-/* ******* showProducts gör att det som finns i de inkommande arrayerna visas direkt utan att man behöver klicka någonstans ****
-funktionen showProduct finns längre ned i den här koden.
-*/
 showProduct()
 
+// --------------------------------------------------------------------
+// setItem cart to local storage
+function setCartLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 // --------------------------------------------------------------------
-// HANDLE BUTTON CLICKS, DEPENDING ON BUTTON CLASS NAME
+// getItem cart to local storage *************ANVÄNDS NÄR DET KOPPLAS IHOP MED PRODUKTSIDAN******************
+function getCartLocalStorage() {
+    localStorage.getItem('cart', JSON.parse(cart));
+}
+
+// --------------------------------------------------------------------
+// setItem wishlist to local storage
+function setWishlistLocalStorage() {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
+
+// --------------------------------------------------------------------
+// getItem wishlist to local storage *************ANVÄNDS NÄR DET KOPPLAS IHOP MED PRODUKTSIDAN******************
+function getWishlistLocalStorage() {
+    localStorage.getItem('wishlist', JSON.parse(wishlist));
+}
+
+// --------------------------------------------------------------------
+// HANDLE BUTTON CLICKS ON PRODUCTS
 productList.onclick = function(e) {
     if(e.target && e.target.classList.contains("remove")) {
         const name = e.target.dataset.name
@@ -30,19 +43,29 @@ productList.onclick = function(e) {
     } else if(e.target && e.target.classList.contains("add-one")) {
         const name = e.target.dataset.name
         addProduct(name)
+        setWishlistLocalStorage()
     } else if(e.target && e.target.classList.contains("remove-one")) {
         const name = e.target.dataset.name
         removeProduct(name, 1)
-    }
-    else if(e.target && e.target.classList.contains("add-to-cart")) {
+    } else if(e.target && e.target.classList.contains("add-to-cart")) {
         const name = e.target.dataset.name
-        const price = e.target.dataset.price
-        addProductCart(name, price)
+        addProductCart(name)
     }
 }
 
 // --------------------------------------------------------------------
-// ADD MORE productS TO WISHLIST
+// BUTTON THAT ADD WISHLIST AND CART TO LOCAL STORAGE. ALSO CLEAR THE WISHLIST ARRAY.
+addAllToCart.onclick = function(e) {
+    if(e.target && e.target.classList.contains("add-all-to-cart")) {
+        cart.push(...wishlist)
+        setCartLocalStorage()
+    }
+    wishlist.splice(0, wishlist.length)
+    showProduct()
+}
+
+// --------------------------------------------------------------------
+// ADD PRODUCT TO WISHLIST
 function addProduct(name, price) {
     for(let i=0; i < wishlist.length; i+=1) {
         if(wishlist[i].name === name) {
@@ -53,38 +76,31 @@ function addProduct(name, price) {
     }
     const product = {name, price, qty: 1}
     wishlist.push(product)
-
-    const localStorageCart = JSON.parse(localStorage.getItem("wishlist")) || []
-    wishlist.push(...localStorageWishlist)
-    localStorage.setItem("wishlist", JSON.stringify(wishlist))
-    
-    showProduct()
 }
+
 // --------------------------------------------------------------------
-// ADD productS TO CART
-function addProductCart(name, price) {
+// ADD PRODUCTS TO CART
+function addProductCart(name) {
     for(let i=0; i < wishlist.length; i+=1) {
         if(wishlist[i].name === name) {
-            wishlist[i].qty -=1
+            cart.push(wishlist[i])
         }
     }
-    const product = {name, price, qty: 1}
-    cart.push(product)
-   
-    const localStorageCart = JSON.parse(localStorage.getItem("cart")) || []
-    cart.push(...localStorageCart)
-    localStorage.setItem("cart", JSON.stringify(cart))
-    
+
+    setCartLocalStorage()
+
     for(let i=0; i < wishlist.length; i+=1) {
         if(wishlist[i].name === name) {
             wishlist.splice([i], 1)
         }
     }
+    setWishlistLocalStorage()
+    
     showProduct()
 }
 
 // --------------------------------------------------------------------
-// SHOW product
+// SHOW PRODUCT
 function showProduct() {
     productQty.innerHTML = `You have ${getQty()} products in your wishlist`
     let productStr = ""
@@ -95,7 +111,7 @@ function showProduct() {
         <button class="remove" data-name="${name}">Remove</button>
         <button class="add-one" data-name="${name}">+</button>
         <button class="remove-one" data-name="${name}">-</button>
-        <button class="add-to-cart" type="submit" data-name="${name}" data-price="${price}">Add To Cart</button>
+        <button class="add-to-cart" type="submit" data-name="${name}">Add To Cart</button>
         </li>`
     }
     productList.innerHTML = productStr
@@ -123,7 +139,7 @@ function getTotal() {
 }
 
 // --------------------------------------------------------------------
-// REMOVE product
+// REMOVE PRODUCT
 
 function removeProduct(name, qty = 0) {
     for(let i=0; i < wishlist.length; i+=1) {
@@ -134,35 +150,9 @@ function removeProduct(name, qty = 0) {
             if(wishlist[i].qty < 1 || qty === 0) {
                 wishlist.splice(i, 1)
             }
+            setWishlistLocalStorage()
             showProduct()
             return
         }
     }
 }
-
-// --------------------------------------------------------------------
-// BUTTON THAT ADD WISHLIST AND CART TO LOCAL STORAGE. ALSO CLEAR THE WISHLIST ARRAY.
-addAllToCart.onclick = function(e) {
-    if(e.target && e.target.classList.contains("add-all-to-cart")) {
-        cart.push(...wishlist)
-        localStorage.setItem("cart", JSON.stringify(cart))
-    }
-    wishlist.splice(0, wishlist.length)
-    showProduct()
-}
-
-/*  ************* SLÅ IHOP WISHLIST OCH CART I BARA CART INNAN DE FLYTTAS TILL LOCAL STORAGE
-*/
-
-// --------------------------------------------------------------------
-// TEST PRODUCTS
-
-/*
-addProduct("Game", 2,)
-addProduct("Chair", 1)
-addProduct("Game", 2)
-addProduct("Laptop", 4)
-addProduct("Game", 2)
-addProduct("Chair", 1)
-addProductCart("Game", 2)
-*/

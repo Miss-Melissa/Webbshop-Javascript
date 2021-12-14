@@ -11,6 +11,4 @@ products.forEach(product => {
     document.querySelector('body').appendChild(tag);
 });
 
-///products.html?category=Musmattor
-///products.html?category=Skärmar
 

@@ -1,13 +1,16 @@
 import ProductHandler from '../classes/ProductHandler.js';
 const ph = new ProductHandler();
-ph.products.forEach(product => {
+const url = new URL(location.href);
+
+const products = ph.getByCategory(url.searchParams.get('category'))
+
+products.forEach(product => {
     if (!product.id) return;
     let tag = document.createElement("product-card");
     tag.data = product;
     document.querySelector('body').appendChild(tag);
 });
 
-const urlCategory = location.href; 
+///products.html?category=Musmattor
+///products.html?category=Skärmar
 
-console.log(urlCategory);
-ph.getByCategory()

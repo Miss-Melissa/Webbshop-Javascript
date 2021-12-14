@@ -34,11 +34,11 @@ product-card {
         font-size: 1.8rem;
         font-weight: 500;
         width: 100%;
-        border-bottom: 1px solid #0071BC;
+        border-bottom: 1px solid $c4-red;
     }
 
     .bi-suit-heart-fill {
-        color: #0071BC;
+        color: $c4-red;
         cursor: pointer;
         font-size: 1.2rem;
     }
@@ -46,7 +46,7 @@ product-card {
     .bi-suit-heart {
         color: black;
         cursor: pointer;
-        font-size: 1.2rem;
+        font-size: 1.2rem; 
     }
 
     &:hover {

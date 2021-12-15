@@ -126,6 +126,84 @@ document.querySelector('#retrieve-img-btn').addEventListener('click', (e) => {
 })
 
 
+function renderEditList() {
+    let tBody = document.querySelector('table > tbody');
+
+    ph.products.forEach(p => {
+        let template = document.createElement('template');
+        template.innerHTML = `
+            <tr>
+                <td><img src="${p.thumbnail}" referrerpolicy="no-referrer" width="50"></td>
+                <td>${p.title}</td>
+                <td>${p.price}</td>
+                <td>${p.category}</td>
+                <td>${p.shortDescription}</td>
+                <td>
+                    <button class="btn btn-primary">Editera</button>
+                    <button class="btn btn-danger">Ta bort</button>
+                </td>
+            </tr>
+        `;
+
+        let tr = template.content.cloneNode(true);
+
+        tr.querySelector(".btn-primary").addEventListener('click', e => {
+
+            document.querySelector('#add-product-btn').style.display = "none";
+
+            document.querySelector('#update-product-btn').style.display = "inline-block";
+            document.querySelector('#delete-product-btn').style.display = "inline-block";
+
+            product = p;
+
+            Object.keys(form).forEach(key => {
+                form[key].value = p[key];
+            });
+
+            let imgElem = document.createElement("img");
+            imgElem.setAttribute('src', product.thumbnail);
+            imgElem.setAttribute("referrerpolicy", "no-referrer");
+            imgElem.setAttribute("width", "440");
+            imgElem.setAttribute("height", "440");
+
+            let imgContainer = document.querySelector(".right-col");
+            imgContainer.innerHTML = "";
+            imgContainer.appendChild(imgElem);
+        });
+
+        tr.querySelector(".btn-danger").addEventListener('click', () => {
+            ph.deleteProduct(p.id);
+        })
+
+        tBody.appendChild(tr);
+
+    });
+}
+
+//EVentlistener, klick uppdaterar produkt
+document.querySelector("#update-product-btn").addEventListener('click', (e) => {
+    e.preventDefault();
+
+    Object.keys(form).forEach(key => {
+        product[key] = form[key].value;
+    });
+
+    ph.updateProduct(product);
+});
+
+//Eventlistener, klick tar bort produkten från listan(samt localstorage)
+document.querySelector("#delete-product-btn").addEventListener('click', (e) => {
+    e.preventDefault();
+
+    ph.deleteProduct(product.id);
+})
+
+renderEditList();
+
+
+
+
+
 
 
 

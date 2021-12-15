@@ -1,11 +1,14 @@
+@import "./variable.scss";
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: $padding;
+    margin: $margin;
+    box-sizing: $boxSizing;
+    font-family: $fontSize;
+    color: whitesmoke;
 }
 @import "./nav.scss";
 @import "./logo.scss";
 @import "./icons.scss";
-@import "./hamburger.scss";
+@import "./hamburgerModal.scss";
 @import "./mainMenu.scss";
 @import "./mediaquery.scss";

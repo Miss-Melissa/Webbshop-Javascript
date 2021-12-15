@@ -6,9 +6,9 @@
     font-family: $fontFamily;
     color: whitesmoke;
 }
-@import "./nav.scss";
+@import "./navContainer.scss";
 @import "./logo.scss";
 @import "./icons.scss";
 @import "./hamburgerModal.scss";
-@import "./mainMenu.scss";
+@import "./navMenu.scss";
 @import "./mediaquery.scss";

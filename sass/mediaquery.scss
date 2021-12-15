@@ -1,4 +1,4 @@
-
+@import "./variable.scss";
 @media screen and (min-width: $breakpoint-ipad) {
     
     * {
@@ -7,25 +7,49 @@
     
     .nav {
         flex-direction: column;
-        height: 13vh;
+        height: 20vh;
     }
     
     .navTop {
         width: 100vw;
-        height: 6vh;
+        height: 12vh;
     }
     
     .navBot {
         width: 100vw;
-        height: 7vh;
+        height: 8vh;
     }
 
     .fa-bars {
         display: none;
     }
 
-    .varukorg-modal-content {
-        animation-name: none; // vill bli av med animation från mobil.
+    .navMenu {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        list-style: none;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 8vh;
+    }
+    
+    .liNav {
+        font-size: 1rem;
+        padding-bottom: 0;
+        padding-top: 0;
+        text-align: center;
+
+    }
+    
+    .aNav {
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 1.2rem;
+    }
+
+    .hamburger-modal-content {
+        animation-name: none;
         width: 55%;
         float: right;
         height: 100%;
@@ -35,7 +59,6 @@
         transition-timing-function: ease-out;
     }
 
-    //vill att den ska slidea in för höger ist för att gå från 0-1 opacity
     @keyframes slidein {
         0% {
             width: 0;
@@ -46,28 +69,6 @@
             opacity: 1;
         } 
     }
-
-    .mainMenu {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        list-style: none;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 7vh;
-    }
-    
-    .liNav {
-        font-size: 1rem;
-        padding-bottom: 0;
-        padding-top: 0;
-        text-align: center;
-    }
-    
-    .aNav {
-        text-decoration: none;
-        color: #1a1e26;
-    }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
@@ -75,21 +76,6 @@
         font-size: 1.4rem;
     }
     
-    .nav {
-        flex-direction: column;
-        height: 13vh;
-    }
-    
-    .navTop {
-        width: 100vw;
-        height: 6vh;
-    }
-    
-    .navBot {
-        width: 100vw;
-        height: 7vh;
-    }
-
     .varukorg-modal-content {
         width:45%;
     }
@@ -103,28 +89,6 @@
             width: 45%;
             opacity: 1;
         } 
-    }
-
-    .mainMenu {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        list-style: none;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 7vh;
-    }
-    
-    .liNav {
-        font-size: 1rem;
-        padding-bottom: 0;
-        padding-top: 0;
-        text-align: center;
-    }
-    
-    .aNav {
-        text-decoration: none;
-        color: #1a1e26;
     }
 }
 

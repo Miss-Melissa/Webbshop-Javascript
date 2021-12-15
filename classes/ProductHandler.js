@@ -3,14 +3,14 @@
 class ProductHandler {
     constructor() {
         this.products = JSON.parse(localStorage.getItem('products')) || [];
-        this.wishCart = JSON.parse(localStorage.getItem('wishcart')) || [];
+        //this.wishCart = JSON.parse(localStorage.getItem('wishcart')) || [];
         this.randomList = [];
     }
 
     // saveData sparar ner till localstorage 
     saveData() {
         localStorage.setItem('products', JSON.stringify(this.products));
-        localStorage.setItem('wishcart', JSON.stringify(this.cart));
+        //localStorage.setItem('wishcart', JSON.stringify(this.cart));
     }
 
     //addProduct pushar in ny data som läggs till

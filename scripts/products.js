@@ -9,7 +9,7 @@ products.forEach(product => {
     if (!product.id) return;
     let tag = document.createElement("product-card");
     tag.data = product;
-    document.querySelector('body').appendChild(tag);
+    document.querySelector('.products-container').appendChild(tag);
 });
 
 

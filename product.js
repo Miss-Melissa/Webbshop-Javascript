@@ -24,6 +24,7 @@ document.querySelector(".product-landing-page").innerHTML=`
     <img class="product-img" src="${product.link}" referrerpolicy="no-referrer">
     <div class="product-aside"
         <h5 class="product-price">${product.price} kr</h5>
+        <p class="product-stock"></p>
         <div class="product-btns">
             <button class="product-cart">Lägg i varukorg</button>
             <button class="product-wishlist">Spara i Wish List</button>
@@ -33,7 +34,6 @@ document.querySelector(".product-landing-page").innerHTML=`
 <section class="section-description">
     <p class="product-description">${product.description}</p>
     <p class="product-articleno">Vårt artikelnummer: ${product.id}</p>
-    <p class="product-stock"></p>
 </section>
 `
 if (product.stock > 0) {

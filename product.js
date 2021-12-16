@@ -21,14 +21,16 @@ console.log(product);
 document.querySelector(".product-landing-page").innerHTML=`
 <h1 class="product-title">${product.title}</h1>
 <div class="product-wrapper">
-    <img class="product-img" src="${product.link}" referrerpolicy="no-referrer">
+    <div class="product-img-div">
+        <img class="product-img" src="${product.link}" referrerpolicy="no-referrer">
+    </div>
     <div class="product-aside">
-        <h5 class="product-price">${product.price} kr</h5>
-        <p class="product-stock"></p>
+        <h1 class="product-price">${product.price} kr</h1>
         <div class="product-btns">
             <button class="product-cart">Lägg i varukorg</button>
-            <button class="product-wishlist">Spara i Wish List</button>
+            <span class="fas fa-heart"></span>
         </div>
+        <p class="product-stock"></p>
     </div>
 </div>
 <section class="section-description">
@@ -48,9 +50,6 @@ else {
 }
 
 })();
-
-
-
 
 
 //http://127.0.0.1:5501/product.html?id=tMop0X1

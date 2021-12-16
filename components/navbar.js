@@ -5,10 +5,8 @@ class NavBar extends HTMLElement {
         super();
 
         this.innerHTML =
-
-        
         `<header class="header">
-        <nav class="nav">
+        <div class="nav">
             <div class="navTop">
                 <h1>
                     <a class="logoContainer" href="index.html"><img class="logo" src="./Bilder/wie2-svg.svg"></a>
@@ -52,7 +50,7 @@ class NavBar extends HTMLElement {
                         <li class="liNav"><a href="products.html?category=Hörlurar" class="aNav">Hörlurar</a></li>
                     </ul>        
             </div>
-        </nav>
+        </div>
     </header>`
 
         const hamburgerModal = document.querySelector(".hamburger-modal");
@@ -75,8 +73,6 @@ class NavBar extends HTMLElement {
                 hamburgerModal.style.display = "none";
             }
         }
-        //Kod för HTML, antingen htmlkod i "" eller JS med DOM manipulering
-
     }
 }
 

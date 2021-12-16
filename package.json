@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass -o css -w sass"
+    "start": "node-sass -o css -w sass",
+    "build-css": "node-sass -o css sass"
   },
   "keywords": [],
   "author": "Grupp 4",

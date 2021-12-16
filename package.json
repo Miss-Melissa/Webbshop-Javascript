@@ -1,15 +1,16 @@
 {
   "name": "wie-gaming",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass sass/navbar.scss css/navbar.css -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node-sass -o css -w sass",
+    "build-css": "node-sass -o css sass"
   },
   "keywords": [],
-  "author": "",
+  "author": "Grupp 4",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "node-sass": "^7.0.0"
   },
   "devDependencies": {},

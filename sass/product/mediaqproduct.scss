@@ -1,13 +1,25 @@
 @media screen and (min-width: $breakpoint-ipad) {
+    body {
+        font-size: 2rem;
+    }
 
-    .product.product-title1 {
-        font-size: 32rem;
+    .product-title1 {
+        font-size: 5rem;
+
     }
 
     .product-img-div {
         border: 1px solid slateblue;
         height: 35rem;
     } 
+
+    .product-price1{
+        font-size: 4rem;
+    }
+
+    .fa-heart {
+        font-size:3.5rem;
+    }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {

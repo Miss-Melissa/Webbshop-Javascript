@@ -1,15 +1,31 @@
+// Kan vi sätta detta i global?? Om jag använder margin blir den biten vit dvs annan färg än whitesmoke
 * {
     background-color: whitesmoke;
 }
 
-.product-wrapper {
-    display: flex;
-    flex-direction: row;
+.product-landing-page {
+    background-color: whitesmoke;
+    //padding-top: 2rem;
+    //padding-bottom: 2rem;
+}
+
+.product-title {
+    text-align: center;
+    margin: 5rem auto 2rem;
 }
 
 .product-img {
     // tar bort vita backgrunden på bilden
-    mix-blend-mode: multiply;
-    width: 50%;
-    border: 1px solid slateblue;
+    mix-blend-mode: multiply;  
+    border: 1px solid gray;
+    align-self: center;
 }
+
+.product-aside {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+}
+
+
+@import "./mediaqproduct.scss";

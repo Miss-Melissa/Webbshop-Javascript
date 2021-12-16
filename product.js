@@ -19,10 +19,10 @@ if (!product) {
 //annars kör vi
 console.log(product);
 document.querySelector(".product-landing-page").innerHTML=`
-<h1 class="product-title">${product.title}</div>
+<h1 class="product-title">${product.title}</h1>
 <div class="product-wrapper">
     <img class="product-img" src="${product.link}" referrerpolicy="no-referrer">
-    <div class="product-aside"
+    <div class="product-aside">
         <h5 class="product-price">${product.price} kr</h5>
         <p class="product-stock"></p>
         <div class="product-btns">

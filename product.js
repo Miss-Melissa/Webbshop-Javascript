@@ -19,22 +19,22 @@ if (!product) {
 //annars kör vi
 console.log(product);
 document.querySelector(".product-landing-page").innerHTML=`
-<h1 class="product-title">${product.title}</h1>
+<p class="product-title1"><b>${product.title}</b></p>
 <div class="product-wrapper">
     <div class="product-img-div">
-        <img class="product-img" src="${product.link}" referrerpolicy="no-referrer">
-    </div>
+        <img class="product-img1" src="${product.link}" referrerpolicy="no-referrer">
+    </div>  
     <div class="product-aside">
-        <h1 class="product-price">${product.price} kr</h1>
+        <p class="product-price1"><b>${product.price} kr</b></p>
         <div class="product-btns">
             <button class="product-cart">Lägg i varukorg</button>
-            <span class="fas fa-heart"></span>
+            <span href="" class="fas fa-heart"></span>
         </div>
-        <p class="product-stock"></p>
+        <p class="product-stock1"></p>
     </div>
 </div>
 <section class="section-description">
-    <p class="product-description">${product.description}</p>
+    <p class="product-description1">${product.description}</p>
     <p class="product-articleno">Vårt artikelnummer: ${product.id}</p>
 </section>
 `

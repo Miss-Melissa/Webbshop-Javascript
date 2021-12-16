@@ -1,8 +1,17 @@
-/* .product-wrapper {
-    flex-direction: row;
+@media screen and (min-width: $breakpoint-ipad) {
+
+    .product.product-title1 {
+        font-size: 32rem;
+    }
+
+    .product-img-div {
+        border: 1px solid slateblue;
+        height: 35rem;
+    } 
 }
 
-.product-img {
-    width: 60%;
-    border: 1px solid slateblue;
-} */
+@media screen and (min-width: $breakpoint-desktop) {
+}
+
+@media screen and (min-width: $breakpoint-max) {
+}

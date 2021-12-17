@@ -6,12 +6,13 @@ class NavBar extends HTMLElement {
 
         this.innerHTML =
         `<header class="header">
-        <div class="nav">
+
+        <nav class="nav">
             <div class="navTop">
-                <h1>
+                <h1 class="h1Nav">
                     <a class="logoContainer" href="index.html"><img class="logo" src="./Bilder/wie2-svg.svg"></a>
                 </h1>
-                <div class="icons">
+                <div class="icons navIconFontSize">
                     <a href="wishlistModal.html" class="iconNav"><i class="fas fa-heart"></i></a>
                     <a href="shoppingCartModal.html" class="iconNav"><i class="fas fa-shopping-cart"></i></a>
                 </div>
@@ -27,7 +28,7 @@ class NavBar extends HTMLElement {
                             </div>
 
                             <section class="hamburger-modal-categories">
-                                <ul class="modalMenu">
+                                <ul class="modalMenu navMenuFontSize">
                                     <li class="liModal"><a href="products.html?category=Skärmar" class="aModal">Skärmar</a></li>
                                     <li class="liModal"><a href="products.html?category=Tangentbord" class="aModal">Tangentbord</a></li>
                                     <li class="liModal"><a href="products.html?category=Möss" class="aModal">Möss</a></li>
@@ -40,7 +41,7 @@ class NavBar extends HTMLElement {
 
                         </div>    
                 </div>
-                    <ul class="navMenu">
+                    <ul class="navMenu navMenuFontSize">
                         <li class="liNav"><a href="products.html?category=Skärmar" class="aNav">Skärmar</a></li>
                         <li class="liNav"><a href="products.html?category=Tangentbord" class="aNav">Tangentbord</a></li>
                         <li class="liNav"><a href="products.html?category=Möss" class="aNav">Möss</a></li>
@@ -50,7 +51,7 @@ class NavBar extends HTMLElement {
                         <li class="liNav"><a href="products.html?category=Hörlurar" class="aNav">Hörlurar</a></li>
                     </ul>        
             </div>
-        </div>
+        </nav>
     </header>`
 
         const hamburgerModal = document.querySelector(".hamburger-modal");

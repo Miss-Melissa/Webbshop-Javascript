@@ -1,64 +1,78 @@
 @import "./variable.scss";
 @media screen and (min-width: $breakpoint-ipad) {
-    
-    * {
-        font-size: 1.3rem;
+ 
+    .navMenuFontSize > li > a {
+        font-size: 1.5rem;
     }
-    
+
+    .navIconFontSize > a {
+        font-size: 2.5rem;
+    }
     .nav {
         flex-direction: column;
         height: 22vh;
-    }
-    
-    .navTop {
-        width: 100vw;
-        height: 14vh;
-    }
-    
-    .navBot {
-        width: 100vw;
-        height: 8vh;
-    }
+        justify-content: center;
+        align-items: center;    
 
-    .fa-bars {
-        display: none !important;
-    }
+        .navTop {
+            width: 100vw;
+            height: 14vh;
 
-    .navMenu {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        list-style: none;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 8vh;
-    }
-    
-    .liNav {
-        font-size: 1rem;
-        padding-bottom: 0;
-        padding-top: 0;
-        text-align: center;
+            .h1Nav {
+                
+                .logoContainer {
+                    width: 7rem;
+                    height: 7rem;
+                
+                    .logo {
+                        width: 6rem;
+                        height: 6rem;
+                    }
+                }
+            }
+        }
+        
+        .navBot {
+            width: 100vw;
+            height: 8vh;
 
-    }
-    
-    .aNav {
-        text-decoration: none;
-        color: whitesmoke;
-        font-size: 1.2rem;
-    }
+            .fa-bars {
+                display: none !important;
+            }
+        
+            .hamburger-modal-content {
+                animation-name: none;
+                width: 55%;
+                float: right;
+                height: 100%;
+                margin:0;
+                animation-name: slidein;
+                animation-duration: 0.2s;
+                transition-timing-function: ease-out;
+            }
 
-    .hamburger-modal-content {
-        animation-name: none;
-        width: 55%;
-        float: right;
-        height: 100%;
-        margin:0;
-        animation-name: slidein;
-        animation-duration: 0.2s;
-        transition-timing-function: ease-out;
-    }
+            .navMenu {
+                display: flex !important;
+                flex-direction: row;
+                position: static;
+                list-style: none;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 8vh;
+                margin: 0 !important;
+                padding: 0 !important;
 
+                .liNav {
+                    text-align: center;  
+
+                    .aNav {
+                        text-decoration: none;
+                        color: whitesmoke;
+                    }
+                }
+            }
+        }    
+    }
     @keyframes slidein {
         0% {
             width: 0;
@@ -72,11 +86,7 @@
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
-    * {
-        font-size: 1.4rem;
-    }
-    
-    .varukorg-modal-content {
+    .hamburger-modal-content {
         width:45%;
     }
 
@@ -93,7 +103,7 @@
 }
 
 @media screen and (min-width: $breakpoint-max) {
-    .varukorg-modal-content {
+    .hamburger-modal-content {
         width:35%;
     }
 

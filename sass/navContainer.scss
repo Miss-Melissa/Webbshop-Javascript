@@ -1,21 +1,67 @@
+@import "./variable.scss";
 .nav {
-    background-color: #3A3A3A;
+    background-color: $c2-dark-grey;
     display: flex;
     flex-direction: row;
     height: 15vh;
-}
 
-.navTop {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80vw;
-    margin: auto;
-}
-.navBot {
-    display: flex;
-    justify-content: space-evenly;
-    //align-items: center;
-    margin: auto;
-    width: 20vw;
+    .navTop {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80vw;
+        margin: auto;
+
+        .h1Nav {
+            margin: 0;
+        
+            .logoContainer {
+                width: 6rem;
+                height: 6rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+                .logo {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            font-size: 1.4rem;
+            width: 20vw;
+            justify-content: space-around;
+        
+            .iconNav:visited {
+                color: whitesmoke;
+            }
+
+             .fa-heart {
+                color: $c4-red;
+            }
+            
+            .fa-shopping-cart {
+                color: $c1-blue;
+            }
+        }
+    }
+
+    .navBot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20vw;
+
+        .navMenu {
+            display: none;
+            background: #575757;
+            color: whitesmoke;
+            list-style: none;
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
 }

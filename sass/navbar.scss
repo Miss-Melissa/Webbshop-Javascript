@@ -2,13 +2,9 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: $boxSizing;
     font-family: $fontFamily;
-    color: whitesmoke;
 }
 @import "./navContainer.scss";
-@import "./logo.scss";
-@import "./icons.scss";
 @import "./hamburgerModal.scss";
-@import "./navMenu.scss";
 @import "./mediaquery.scss";

@@ -51,11 +51,8 @@ else if (product.stock === "1") {
 }
 
 else {
-    document.querySelector("product.stock1").innerHTML = `
+    document.querySelector(".product-stock1").innerHTML = `
     Lagerstatus: Produkten är tyvärr slut.
     `
 }
 })();
-
-
-//http://127.0.0.1:5501/product.html?id=tMop0X1

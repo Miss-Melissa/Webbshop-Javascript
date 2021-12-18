@@ -1,15 +1,9 @@
 @media screen and (min-width: $breakpoint-ipad) {
-    body {
-        font-size: 2rem;
-    }
-
     .product-title1 {
-        font-size: 5rem;
-
+        font-size: 4.5rem;
     }
 
     .product-img-div {
-        border: 1px solid slateblue;
         height: 35rem;
     } 
 
@@ -17,13 +11,56 @@
         font-size: 4rem;
     }
 
+    .product-cart {
+        font-size: 2rem;
+    }
+
     .fa-heart {
+        margin-top: 2rem;
         font-size:3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .product-stock1 {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .section-description {
+        font-size: 1.5rem;
     }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
+    .product-wrapper {
+        display: flex;
+        border: 1px solid orange;
+        margin-bottom: 2rem;
+    }
+
+    .product-img-div {
+        width: 50%;
+        height: 28rem;
+    }
+
+    .product-aside {
+        width: 50%;
+    }
+
+    .product-stock1 {
+        font-size: 1.8rem;
+    }
+
+    .section-description {
+        margin-top: 3rem;
+        font-size: 1.6rem;
+    }
+
+
 }
 
 @media screen and (min-width: $breakpoint-max) {
+    .product-img-div {
+        height: 35rem;
+    }
 }

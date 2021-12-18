@@ -38,17 +38,23 @@ document.querySelector(".product-landing-page").innerHTML=`
     <p class="product-articleno">Vårt artikelnummer: ${product.id}</p>
 </section>
 `
-if (product.stock > 0) {
-    document.querySelector(".product-stock").innerHTML = `
+if (product.stock > "1") {
+    document.querySelector(".product-stock1").innerHTML = `
     Lagerstatus: ${product.stock} produkter i lager.
     `
 }
-else {
-    document.querySelector("product.stock").innerHTML = `
-    Lagerstatus: Produkten är tyvärr slut.
+
+else if (product.stock === "1") {
+    document.querySelector(".product-stock1").innerHTML = `
+    Lagerstatus: ${product.stock} produkt i lager.
     `
 }
 
+else {
+    document.querySelector("product.stock1").innerHTML = `
+    Lagerstatus: Produkten är tyvärr slut.
+    `
+}
 })();
 
 

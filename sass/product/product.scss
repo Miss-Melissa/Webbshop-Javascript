@@ -57,6 +57,7 @@
     margin-bottom: 2rem;
     padding: 1rem;
     width: 100%;
+    font-size:1.2rem;
 }
 
 .fa-heart {
@@ -74,7 +75,9 @@
 }
 
 .product-stock1 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
 }
 
 .section-description {
@@ -89,7 +92,6 @@
 .product-articleno {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid gray;
 }
 
 @import "./mediaqproduct.scss";

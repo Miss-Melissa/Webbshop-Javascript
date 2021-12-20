@@ -27,8 +27,8 @@ document.querySelector(".product-landing-page").innerHTML=`
     <div class="product-aside">
         <p class="product-price1"><b>${product.price} kr</b></p>
         <div class="product-btns">
-            <button class="product-cart">Lägg i varukorg</button>
-            <span href="" class="fas fa-heart"></span>
+            <button class="add-cart">Lägg i varukorg</button>
+            <span href="" class="fas fa-heart add-Wishlist"></span>
         </div>
         <p class="product-stock1"></p>
     </div>
@@ -56,3 +56,26 @@ else {
     `
 }
 })();
+
+
+//Button Selectors
+const cartBtn = document.querySelector(".add-cart");
+const wishListBtn = document.querySelector(".add-Wishlist");
+
+//Local storage selectors
+const wishlist = JSON.parse(localStorage.getItem("wishlsit")) || [];
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//eventlisteners
+cartBtn.addEventListener("click", addCart);
+wishListBtn.addEventListener("click", addWishList);
+
+//function for add cart btn
+function addCart () {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+//function for add wishlist btn
+function addWishList () {
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}

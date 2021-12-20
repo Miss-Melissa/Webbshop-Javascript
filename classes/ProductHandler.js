@@ -17,6 +17,26 @@ class ProductHandler {
     addProduct(newProduct) {
         this.products.push(newProduct);
         this.saveData();
+        window.location.reload();
+    }
+
+    updateProduct(updatedProduct) {
+        let currentProduct = this.getByID(updatedProduct.id);
+
+        Object.keys(currentProduct).forEach(key => {
+            currentProduct[key] = updatedProduct[key];
+        });
+
+        this.saveData();
+        window.location.reload();
+    }
+
+    deleteProduct(productId){
+        let index = this.products.findIndex(p => p.id === productId);
+        if(index == -1) return;
+        this.products.splice(index, 1);
+        this.saveData();
+        window.location.reload();
     }
 
     addToCart(newProduct) {

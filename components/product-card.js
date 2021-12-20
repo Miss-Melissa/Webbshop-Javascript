@@ -35,6 +35,13 @@ class Product extends HTMLElement {
         this.appendChild(productImg);
         this.appendChild(productPrice);
         this.appendChild(productShortDescription);
+
+        this.addEventListener('click', e => {
+            if(e.target.className.includes('bi')) return;
+
+            let url = `/product.html?id=${this.data.id}`;
+            window.location.href = url;
+        });
     };
 }
 

@@ -63,7 +63,7 @@ const cartBtn = document.querySelector(".add-cart");
 const wishListBtn = document.querySelector(".add-Wishlist");
 
 //Local storage selectors
-const wishlist = JSON.parse(localStorage.getItem("wishlsit")) || [];
+const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 //eventlisteners

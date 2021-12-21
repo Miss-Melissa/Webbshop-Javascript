@@ -2,7 +2,7 @@
 
 body {
     font-family: Oswald;
-    background-color: $color-whitesmoke; 
+    background-color: $color-whitesmoke
 };
 
 .main-container{
@@ -13,5 +13,6 @@ body {
 @import "./navbar/_navbar.scss"; 
 @import "./shoppingCart/_shoppingCartModal.scss";
 @import "./footer/_footer.scss";
-@import "./products/product-card.scss";
-@import "./admin/admin-style.scss";
+@import "./products/_product-card.scss";
+@import "./admin/_admin-style.scss";
+@import "./product/_product.scss";

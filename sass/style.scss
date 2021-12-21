@@ -1,15 +1,17 @@
-@import "./variable.scss";
+@import "./_variable.scss";
 
-*{
-    font-family: Oswald; 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
-}
+body {
+    font-family: Oswald;
+    background-color: $color-whitesmoke; 
+};
 
-@import "./shoppingCart/shoppingCartModal.scss";
+.main-container{
+    min-height: 35vh;
+    width: 100%;
+};
+
+@import "./navbar/_navbar.scss"; 
+@import "./shoppingCart/_shoppingCartModal.scss";
+@import "./footer/_footer.scss";
 @import "./products/product-card.scss";
-@import "./footer/Footer.scss";
 @import "./admin/admin-style.scss";
-@import "./product/product.scss";

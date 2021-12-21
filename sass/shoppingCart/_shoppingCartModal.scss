@@ -1,21 +1,19 @@
-@import "../variable.scss";
-
+/* 
 * {
     padding: $padding;
     margin: $margin;
     box-sizing: $boxSizing;
     font-family: $fontFamily;
     color: $color;
-}
+} */
 
 .fa-shopping-cart {
-    background-color: coral;
     padding: 10px 20px;
-    color: whitesmoke;
+    color: $color-whitesmoke;
 }
 
 .fa-shopping-cart:hover {
-    background-color: #333;
+    background-color: $c2-dark-grey;
 }
 
 // nedan är alltså hela ytan när man trycker på knappen, inte själva varukorgen.
@@ -111,5 +109,5 @@
 }
 
 //längst ned
-@import "./mediaqCartModal.scss";
+@import "./_mediaqCartModal.scss";
 

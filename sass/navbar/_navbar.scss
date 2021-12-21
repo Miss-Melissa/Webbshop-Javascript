@@ -1,0 +1,104 @@
+nav {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+    .nav-top {
+        padding: 10px;
+        background-color: $c2-dark-grey;
+
+        .nav-container {
+            .bi-suit-heart-fill {
+                color: $c4-red;
+            }
+
+            .bi-cart3 {
+                color: $c1-blue;
+            }
+
+            .home-logo {
+                display: flex;
+                vertical-align: middle;
+
+                span {
+                    font-size: 1.8rem;
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+
+    .nav-bot {
+        background-color: $c3-light-grey;
+
+        .nav-container>a {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    *>.nav-container {
+        margin: auto;
+        max-width: $breakpoint-max;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-whitesmoke;
+    font-size: 1.2rem;
+    padding: 1rem;
+
+    &:hover {
+        color: $color-whitesmoke;
+        background-color: $c2-dark-grey;
+    }
+
+    &:focus {
+        color: $color-whitesmoke;
+    }
+}
+
+.nav-burger {
+    display: none;
+    margin-left: 10px;
+}
+
+a>.bi {
+    font-size: 1.6rem;
+}
+
+.link-active {
+    background-color: $c2-dark-grey;
+}
+
+@media only screen and (max-width: $breakpoint-desktop) {
+    body {
+        margin-top: 80px;
+    }
+
+    .nav-burger {
+        display: initial;
+    }
+
+    .nav-bot {
+        display: none;
+        flex-wrap: wrap;
+    }
+
+    .nav-bot>.nav-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    .home-logo>span {
+        display: none;
+    }
+}

@@ -1,10 +1,21 @@
-const productList = document.querySelector("#product-list")
-const productName = document.querySelector("#product-name")
-const productPrice = document.querySelector("#product-price")
-const productQty = document.querySelector("#product-qty")
+/*
+import ProductHandler from '../classes/ProductHandler.js';
+const ph = new ProductHandler();
+
+function getCartLocalStorage () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    return wishlist.map(i => {
+        i.product = ph.getByID(i.id)
+        return i
+    })
+}*/
+
+const productList = document.querySelector(".product-list")
+const productQty = document.querySelector(".product-qty")
+const cartTotal = document.querySelector(".cart-total")
 const purchase = document.querySelector(".purchase-button")
-const cartTotal = document.querySelector("#cart-total")
-const cart = JSON.parse(localStorage.getItem("cart")) || []
+
+const cart = JSON.parse(localStorage.getItem("cart")) || [{title: "Chair", price: 50, qty: 2, id: "5555"},{title: "Game", price: 40, qty: 1, id: "1111"}]
 
 showProduct()
 
@@ -18,15 +29,15 @@ function setCartLocalStorage() {
 // HANDLE BUTTON CLICKS ON PRODUCTS
 productList.onclick = function(e) {
     if(e.target && e.target.classList.contains("remove")) {
-        const name = e.target.dataset.name
-        removeProduct(name)
+        const id = e.target.dataset.id
+        removeProduct(id)
     } else if(e.target && e.target.classList.contains("add-one")) {
-        const name = e.target.dataset.name
-        addProduct(name)
+        const id = e.target.dataset.id
+        addProduct(id)
         setCartLocalStorage()
     } else if(e.target && e.target.classList.contains("remove-one")) {
-        const name = e.target.dataset.name
-        removeProduct(name, 1)
+        const id = e.target.dataset.id
+        removeProduct(id, 1)
     }
 }
 
@@ -41,18 +52,14 @@ purchase.onclick = function(e) {
 
 // --------------------------------------------------------------------
 // ADD PRODUCT TO CART
-function addProduct(name, price) {
+function addProduct(id) {
     for(let i=0; i < cart.length; i+=1) {
-        if(cart[i].name === name) {
+        if(cart[i].id === id) {
             cart[i].qty +=1
             showProduct()
             return
         }
     }
-    const product = {name, price, qty: 1}
-    cart.push(product)
-    
-    showProduct()
 }
 
 // --------------------------------------------------------------------
@@ -61,12 +68,12 @@ function showProduct() {
     productQty.innerHTML = `You have ${getQty()} products in your cart`
     let productStr = ""
     for (let i=0; i < cart.length; i+=1) {
-        const {name, price, qty} = cart[i]
+        const {title, price, qty, id} = cart[i]
 
-        productStr += `<li>${name} $${price} x ${qty} = $${qty * price} 
-        <button class="remove" data-name="${name}">Remove</button>
-        <button class="add-one" data-name="${name}">+</button>
-        <button class="remove-one" data-name="${name}">-</button>
+        productStr += `<li>${title} $${price} x ${qty} = $${qty * price} 
+        <button class="remove" data-id="${id}">Remove</button>
+        <button class="add-one" data-id="${id}">+</button>
+        <button class="remove-one" data-id="${id}">-</button>
         </li>`
     }
     productList.innerHTML = productStr
@@ -94,10 +101,9 @@ function getTotal() {
 
 // --------------------------------------------------------------------
 // REMOVE PRODUCT
-
-function removeProduct(name, qty = 0) {
+function removeProduct(id, qty = 0) {
     for(let i=0; i < cart.length; i+=1) {
-        if(cart[i].name === name) {
+        if(cart[i].id === id) {
             if(qty > 0) {
                 cart[i].qty -= 1
             }

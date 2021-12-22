@@ -1,24 +1,24 @@
 {
-    "name": "wie-gaming",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "start": "npm run build-css & node-sass ./sass/style.scss ./css/style.css -rw ./sass --output-style compressed",
-      "build-css": "node-sass ./sass/style.scss ./css/style.css --output-style compressed "
-    },
-    "keywords": [],
-    "author": "Grupp 4",
-    "license": "ISC",
-    "devDependencies": {
-      "node-sass": "^7.0.0"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/EddieWEB/WIEGAMING.git"
-    },
-    "bugs": {
-      "url": "https://github.com/EddieWEB/WIEGAMING/issues"
-    },
-    "homepage": "https://github.com/EddieWEB/WIEGAMING#readme"
-  }
+  "name": "wie-gaming",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build-css & node-sass ./sass/style.scss ./css/style.css -rw ./sass --output-style compressed",
+    "build-css": "node-sass ./sass/style.scss ./css/style.css --output-style compressed "
+  },
+  "keywords": [],
+  "author": "Grupp 4",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddieWEB/WIEGAMING.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EddieWEB/WIEGAMING/issues"
+  },
+  "homepage": "https://github.com/EddieWEB/WIEGAMING#readme"
+}

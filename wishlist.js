@@ -15,8 +15,9 @@ const productQty = document.querySelector(".product-qty")
 const wishlistTotal = document.querySelector(".wishlist-total")
 const addAllToCart = document.querySelector(".add-all-to-cart")
 
-const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [{title: "Game", price: 2, qty: 1, id: 1337}, {title: "Chair", price: 3, qty: 1, id: 8888}]
-const cart = JSON.parse(localStorage.getItem("cart")) || [{title: "Game", price: 2, qty: 1, id: 7331}]
+const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [{title: "Game", price: 2, qty: 1, id: "1337"}, {title: "Chair", price: 3, qty: 1, id: "8888"}]
+const cart = JSON.parse(localStorage.getItem("cart")) || [{title: "Game", price: 2, qty: 1, id: "7331"}]
+
 showProduct()
 
 // --------------------------------------------------------------------
@@ -60,7 +61,6 @@ addAllToCart.onclick = function(e) {
     wishlist.splice(0, wishlist.length)
     showProduct()
 }
-
 // --------------------------------------------------------------------
 // ADD PRODUCT TO WISHLIST
 function addProduct(id) {
@@ -135,7 +135,6 @@ function getTotal() {
 
 // --------------------------------------------------------------------
 // REMOVE PRODUCT
-
 function removeProduct(id, qty = 0) {
     for(let i=0; i < wishlist.length; i+=1) {
         if(wishlist[i].id === id) {

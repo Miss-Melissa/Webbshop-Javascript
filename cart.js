@@ -101,7 +101,6 @@ function getTotal() {
 
 // --------------------------------------------------------------------
 // REMOVE PRODUCT
-
 function removeProduct(id, qty = 0) {
     for(let i=0; i < cart.length; i+=1) {
         if(cart[i].id === id) {

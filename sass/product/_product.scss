@@ -4,6 +4,7 @@
     padding-top: 176px; //för navbaren
     //background-color: whitesmoke;
     margin: auto;
+    margin-top: 176px;
     max-width: $breakpoint-max;
 
     .product-title1 {
@@ -13,7 +14,7 @@
     }
     
     .product-img-div {
-        width: 90%;
+        width: 50%;
         margin: 0 auto;
         height: 20rem;
         display: flex;

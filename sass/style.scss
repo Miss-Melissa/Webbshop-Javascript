@@ -1,15 +1,26 @@
-@import "./variable.scss";
+@import "./_variable.scss";
 
-*{
-    font-family: Oswald; 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
-}
+body {
+    font-family: Oswald;
+    background-color: $color-whitesmoke
+};
 
+<<<<<<< HEAD
 @import "./shoppingCart/shoppingCartModal.scss";
 @import "./wishlist/wishlistModal.scss";
 @import "./products/product-card.scss";
 @import "./footer/Footer.scss";
 @import "./admin/admin-style.scss";
+=======
+.main-container{
+    min-height: 35vh;
+    width: 100%;
+};
+
+@import "./navbar/_navbar.scss"; 
+@import "./shoppingCart/_shoppingCartModal.scss";
+@import "./footer/_footer.scss";
+@import "./products/_product-card.scss";
+@import "./admin/_admin-style.scss";
+@import "./product/_product.scss";
+>>>>>>> parent of 03970b8 (Små saker)

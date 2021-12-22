@@ -55,27 +55,58 @@ else {
     Lagerstatus: Produkten är tyvärr slut.
     `
 }
-})();
-
 
 //Button Selectors
 const cartBtn = document.querySelector(".add-cart");
 const wishListBtn = document.querySelector(".add-Wishlist");
 
 //Local storage selectors
-const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+//const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+//const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 //eventlisteners
-cartBtn.addEventListener("click", addCart);
-wishListBtn.addEventListener("click", addWishList);
-
+cartBtn.addEventListener("click", ()=>{addToCartModal(product.id)});
+wishListBtn.addEventListener("click", ()=>{addToWishlistModal(product.id)});
 //function for add cart btn
-function addCart () {
+function setCartLocalStorage (cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 //function for add wishlist btn
-function addWishList () {
+function setWishlistLocalStorage (wishlist) {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
 }
+
+//function for add product to wishlist
+function addToWishlistModal(id) {
+    let wishlistObject = {id:id, qty:1};
+    let product = ph.getByID(id);
+    if (!product) return null;
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    let wishlistIndex = wishlist.findIndex(i => i.id === id);
+    
+    if (wishlistIndex > -1) 
+        wishlist[wishlistIndex].qty += 1
+    else
+        wishlist.push(wishlistObject)
+
+    setWishlistLocalStorage(wishlist)
+}
+
+//function for add product to cart
+
+function addToCartModal(id) {
+    let cartObject = {id:id, qty:1};
+    let product = ph.getByID(id);
+    if (!product) return null;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartIndex = cart.findIndex(i => i.id === id);
+    
+    if (cartIndex > -1)
+        cart[cartIndex].qty += 1
+    else
+        cart.push(cartObject)
+
+    setCartLocalStorage(cart)
+}
+})();

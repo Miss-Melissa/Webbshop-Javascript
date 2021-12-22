@@ -1,24 +1,25 @@
-/*
+
 import ProductHandler from '../classes/ProductHandler.js';
 const ph = new ProductHandler();
-
-function getCartLocalStorage () {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    return wishlist.map(i => {
-        i.product = ph.getByID(i.id)
-        return i
-    })
-}*/
 
 const productList = document.querySelector(".product-list")
 const productQty = document.querySelector(".product-qty")
 const wishlistTotal = document.querySelector(".wishlist-total")
 const addAllToCart = document.querySelector(".add-all-to-cart")
 
-const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [{title: "Game", price: 2, qty: 1, id: "1337"}, {title: "Chair", price: 3, qty: 1, id: "8888"}]
-const cart = JSON.parse(localStorage.getItem("cart")) || [{title: "Game", price: 2, qty: 1, id: "7331"}]
+//const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [{title: "Game", price: 2, qty: 1, id: "1337"}, {title: "Chair", price: 3, qty: 1, id: "8888"}]
+const cart = JSON.parse(localStorage.getItem("cart")) || []
+const wishlist = JSON.parse(localStorage.getItem("cart")) || []
 
-showProduct()
+function getWishlistLocalStorage () {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    return wishlist.map(i => {
+        i.product = ph.getByID(i.id)
+        return i
+    })
+}
+let startLS = getWishlistLocalStorage()
+
 
 // --------------------------------------------------------------------
 // setItem cart to local storage
@@ -100,9 +101,10 @@ function showProduct() {
     productQty.innerHTML = `You have ${getQty()} products in your wishlist`
     let productStr = ""
     for (let i=0; i < wishlist.length; i+=1) {
-        const {title, price, qty, id} = wishlist[i]
-
-        productStr += `<li>${title} $${price} x ${qty} = $${qty * price} 
+        let {qty, id} = wishlist[i]
+        let {title, price, thumbnail} = wishlist[i].product
+        
+        productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
         <button class="remove" data-id="${id}">Remove</button>
         <button class="add-one" data-id="${id}">+</button>
         <button class="remove-one" data-id="${id}">-</button>
@@ -128,7 +130,7 @@ function getQty() {
 function getTotal() {
     let total = 0
     for(let i=0; i < wishlist.length; i+=1) {
-        total += wishlist[i].price * wishlist[i].qty
+        total += wishlist[i].product.price * wishlist[i].qty
     }
     return total.toFixed(2)
 }
@@ -150,3 +152,5 @@ function removeProduct(id, qty = 0) {
         }
     }
 }
+
+showProduct()

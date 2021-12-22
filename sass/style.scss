@@ -5,13 +5,6 @@ body {
     background-color: $color-whitesmoke
 };
 
-<<<<<<< HEAD
-@import "./shoppingCart/shoppingCartModal.scss";
-@import "./wishlist/wishlistModal.scss";
-@import "./products/product-card.scss";
-@import "./footer/Footer.scss";
-@import "./admin/admin-style.scss";
-=======
 .main-container{
     min-height: 35vh;
     width: 100%;
@@ -23,4 +16,3 @@ body {
 @import "./products/_product-card.scss";
 @import "./admin/_admin-style.scss";
 @import "./product/_product.scss";
->>>>>>> parent of 03970b8 (Små saker)

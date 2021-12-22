@@ -10,7 +10,7 @@ const categoryTextInfo = {
     Musmattor: "Som gamer är din gamingmus en av de viktigaste verktygen, men många glömmer att utan en stabil musmatta som grund så kommer din gamingmus aldrig leva upp till sin fulla potential. Musmattor för gaming kommer i olika material, mönster och tjocklekar, men det viktigaste för en gamer är att musmattan har en stor yta.",
     Hörlurar: "Enligt oss på WIE Gaming är riktigt bra ljud väldigt avgörande för att bli en bra gamer. Därför har vi samlat headset, hörlurar, mikrofoner, headset stand, högtalare, externa ljudkort och mycket mer i absolut toppklass från flera ledande varumärken som SteelSeries, Logitech, Razer och Corsair. Genom att höja nivån på ljudet tar du även spelupplevelsen till nästa nivå. Få saker skapar sådan inlevelse som att kunna höra varje liten händelse på ett perfekt sätt. Tycker du om att spela multiplayer är dessutom ljudet ofta en skillnad på liv eller död. Till exempel om du hör motståndarens fotsteg kan du vända det till din egna fördel."
 };
-const urlCategory = url.searchParams.get('category');
+const urlCategory = url.searchParams.get('category') || "Skärmar";
 
 //Ritar ut produkter baserat på category i en url
 const products = ph.getByCategory(urlCategory);

@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="sv">
 
-    <head>
-        <!-- META TAGS -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- DEFAULT INCLUDES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" >
-        <script src="https://kit.fontawesome.com/4cc1dae1f8.js" defer></script>
-        <script src="./default-product-data.js" defer></script>
-    
-        <!-- BOOTSTRAP -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    
-        <!-- COMPONENTS -->
-        <script src="./components/navbar.js" defer></script>
-        <script src="./components/cart-modal.js" type="module" defer></script>
-        <script src="./components/footer-comp.js" defer></script>
-        <script src="./components/product-card.js" defer></script>
-    
-        <!-- GLOBAL STYLESHEET -->
-        <link rel="stylesheet" href="./css/style.css">
-    
-        <!-- OTHER -->
-        <title>WIE GAMING</title>
-    </head>
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- DEFAULT INCLUDES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+    <script src="https://kit.fontawesome.com/4cc1dae1f8.js" defer></script>
+    <script src="./default-product-data.js" defer></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <!-- COMPONENTS -->
+    <script src="./components/navbar.js" defer></script>
+    <script src="./components/cart-modal.js" type="module" defer></script>
+    <script src="./components/footer-comp.js" defer></script>
+    <script src="./components/product-card.js" defer></script>
+
+    <!-- GLOBAL STYLESHEET -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- PAGE SPECIFIC -->
+    <script src="index.js" type="module" defer></script>
+
+    <!-- OTHER -->
+    <title>WIE GAMING</title>
+</head>
 
 <body>
 
     <nav-bar></nav-bar>
-    <div class="main-container"></div>
+    <div class="carousel-container">
+        <div class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./Bilder/handkontroll.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Bilder/gamingset2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Bilder/gamingset.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Bilder/gamer.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Bilder/rainbowedition.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+
+        <h1 class="home-title">Se våra senaste produkter här!</h1>
+        <div class="products-container"></div>
+        <h1>Gaming- och esportbutiken </h1>
+        <p>Välkommen till WIE Gaming, webbutiken för dig som älskar gaming och e-sport! Vi har nordens största utbud av
+        gaming-relaterade produkter som vi noga har valt ut för att passa den kräsne gamern. Oavsett om du är på jakt
+        efter den perfekta gamingmusen, en äkta japansk arkadkontroll eller en tröja från ditt favoritlag inom e-sport
+        har vi det du behöver. Vi är specialister på produkter specifikt anpassade för gaming och e-sport. Om du letar
+        efter den gamingmus som är perfekt för just dig så bör du spana in vårt stora utbud av gamingmöss, ta reda på
+        vilket grepp du brukar använda för att få ett perfekt aim. Vill du pimpa din battlestation med lite coola
+        LED-lampor i 16.8 miljoner färger så har vi både RGB-fläktar och LED-strips att använda, spana in vårt utbud av
+        datorkomponenter och tillbehör!
+
+        Genom nära kontakt med en mängd distributörer och e-sports organisationer över hela världen kan vi erbjuda unika
+        produkter och konkurrenskraftiga priser. Eftersom vi har lagt stor vikt vid att kunna göra varje gamer nöjd så
+        har vi tagit in även de produkter som mest eftersöks av entusiaster, så som ovanliga mekaniska tangentbord eller
+        exklusiva samlarknivar. Med 1-2 dagars leveranstid behöver du aldrig stressa inför ett LAN. Känn dig trygg när
+        du handlar hos oss, vi har trygga betalningsmetoder och grym service.</p>
+    </div>
+
     <footer-comp></footer-comp>
 
 </body>

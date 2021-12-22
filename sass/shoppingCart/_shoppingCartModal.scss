@@ -20,7 +20,7 @@
 .varukorg-modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10000;
     right: 0;
     top: 0; // påverkar inget just nu så länge det inte är 0, då läggs den över knappen
     width: 100%;

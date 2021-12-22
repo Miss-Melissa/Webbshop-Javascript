@@ -1,31 +1,44 @@
 const cartModalTemplate = document.createElement('template');
 cartModalTemplate.innerHTML = `
 <div class="varukorg-modal">
-  <div class="varukorg-modal-content">
+        <div class="varukorg-modal-content">
 
-    <div class="modal-header">
-      <span class="close-btn">&times;</span>
-      <h2>Varukorg</h2>
+            <div class="modal-header">
+                <span class="close-btn">&times;</span>
+                <h2>Varukorg</h2>
+            </div>
+
+            <div class="modal-products">
+                <div class="product-qty">
+                    <!-- total amount of products in cart -->
+                </div>
+                <ul class="product-list">
+                    <!-- cart products  -->
+                </ul>
+                <div class="cart-total">
+                    <!-- cart total -->
+                </div>
+                <a href="#">
+                    <button type="submit" class="purchase-button">Purchase</button>
+                </a>
+            </div>
+
+            <div class="modal-summa">
+                <h4>Totalsumma: <span>0</span> kr</h4>
+            </div>
+
+            <div class="to-checkout">
+                <button class="btn-checkout">Till kassan</button>
+            </div>
+
+            <div class="wishlist-suggestions">
+                <i>Psst! Du har väl inte glömt att lägga till dessa produkter från din
+                    wishlist..</i>
+                <i class="far fa-grin-wink"></i>
+            </div>
+
+        </div>
     </div>
-
-    <div class="modal-products"></div>
-    
-    <div class="modal-summa">
-      <h4>Totalsumma: <span>0</span> kr</h4>
-    </div>
-
-    <div class="to-checkout">
-      <button class="btn-checkout">Till kassan</button>
-    </div>
-
-    <div class="wishlist-suggestions">
-      <i>Psst! Du har väl inte glömt att lägga till dessa produkter från din
-        wishlist..</i>
-      <i class="far fa-grin-wink"></i>
-    </div>
-
-  </div>
-</div>
 `;
 
 

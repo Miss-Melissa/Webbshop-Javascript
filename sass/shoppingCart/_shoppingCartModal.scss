@@ -58,7 +58,12 @@
 }
 
 .modal-products{
-    border: 1px solid red;
+
+    .product-qty {
+        margin-left: 0.3rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 
     .product-list {
         border: 1px solid black;
@@ -93,6 +98,23 @@
             width: 50%;
             margin: auto;
             justify-content: space-evenly;
+        }
+    }
+
+    .cart-total {
+        display: flex;
+        justify-content: center;
+        margin-top:1rem;
+        margin-bottom: 1rem;
+    }
+
+    .to-checkout-btn {
+        display: flex;
+        justify-content: center;
+
+        // har lite problem med att styla knappen, eventuellt för att den är tagen från bootstrap (eller likande?)
+        .purchase-button {
+            margin-bottom: 2rem;
         }
     }
 }

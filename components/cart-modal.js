@@ -18,9 +18,11 @@ cartModalTemplate.innerHTML = `
                 <div class="cart-total">
                     <!-- cart total -->
                 </div>
-                <a href="checkout.html">
-                    <button type="submit" class="purchase-button btn btn-primary">Till kassan</button>
-                </a>
+                <div class="to-checkout-btn">
+                    <a href="checkout.html">
+                        <button type="submit" class="purchase-button btn btn-primary">Till kassan</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -128,7 +130,7 @@ class CartModal extends HTMLElement {
                 `                
             }
             productList.innerHTML = productStr
-            cartTotal.innerHTML = `Cart total: ${getTotal()}kr`
+            cartTotal.innerHTML = `Summa: ${getTotal()}kr`
         }
         // --------------------------------------------------------------------
         // GET QTY

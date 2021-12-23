@@ -1,7 +1,10 @@
+//////////////// TA BORT OM ALLT FUNGERAR /////////////////////////
 /*
 import ProductHandler from '../classes/ProductHandler.js';
 const ph = new ProductHandler();
 
+
+//////////////// TA BORT OM ALLT FUNGERAR /////////////////////////
 function getCartLocalStorage () {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     return wishlist.map(i => {
@@ -15,9 +18,7 @@ const productQty = document.querySelector(".product-qty")
 const cartTotal = document.querySelector(".cart-total")
 const purchase = document.querySelector(".purchase-button")
 
-const cart = JSON.parse(localStorage.getItem("cart")) || [{title: "Chair", price: 50, qty: 2, id: "5555"},{title: "Game", price: 40, qty: 1, id: "1111"}]
-
-showProduct()
+const cart = JSON.parse(localStorage.getItem("cart")) || []
 
 // --------------------------------------------------------------------
 // setItem cart to local storage
@@ -42,7 +43,7 @@ productList.onclick = function(e) {
 }
 
 // --------------------------------------------------------------------
-// BUTTON THAT ADD CART TO LOCAL STORAGE.
+// PURCHASE BUTTON THAT ADD CART TO LOCAL STORAGE.
 purchase.onclick = function(e) {
     if(e.target && e.target.classList.contains("purchase-button")) {
         setCartLocalStorage()
@@ -68,9 +69,9 @@ function showProduct() {
     productQty.innerHTML = `You have ${getQty()} products in your cart`
     let productStr = ""
     for (let i=0; i < cart.length; i+=1) {
-        const {title, price, qty, id} = cart[i]
+        const {title, price, thumbnail, qty, id} = cart[i]
 
-        productStr += `<li>${title} $${price} x ${qty} = $${qty * price} 
+        productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
         <button class="remove" data-id="${id}">Remove</button>
         <button class="add-one" data-id="${id}">+</button>
         <button class="remove-one" data-id="${id}">-</button>
@@ -116,3 +117,5 @@ function removeProduct(id, qty = 0) {
         }
     }
 }
+
+showProduct()

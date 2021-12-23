@@ -1,16 +1,18 @@
 
-import ProductHandler from '../classes/ProductHandler.js';
-const ph = new ProductHandler();
+//////////////// TA BORT OM ALLT FUNGERAR /////////////////////////
+//import ProductHandler from '../classes/ProductHandler.js';
+//const ph = new ProductHandler();
+
 
 const productList = document.querySelector(".product-list")
 const productQty = document.querySelector(".product-qty")
 const wishlistTotal = document.querySelector(".wishlist-total")
 const addAllToCart = document.querySelector(".add-all-to-cart")
-
-//const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [{title: "Game", price: 2, qty: 1, id: "1337"}, {title: "Chair", price: 3, qty: 1, id: "8888"}]
 const cart = JSON.parse(localStorage.getItem("cart")) || []
-const wishlist = JSON.parse(localStorage.getItem("cart")) || []
+const wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
 
+//////////////// TA BORT OM ALLT FUNGERAR /////////////////////////
+/*
 function getWishlistLocalStorage () {
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     return wishlist.map(i => {
@@ -18,8 +20,7 @@ function getWishlistLocalStorage () {
         return i
     })
 }
-let startLS = getWishlistLocalStorage()
-
+*/
 
 // --------------------------------------------------------------------
 // setItem cart to local storage
@@ -60,6 +61,7 @@ addAllToCart.onclick = function(e) {
         setCartLocalStorage()
     }
     wishlist.splice(0, wishlist.length)
+    setWishlistLocalStorage()
     showProduct()
 }
 // --------------------------------------------------------------------
@@ -101,8 +103,7 @@ function showProduct() {
     productQty.innerHTML = `You have ${getQty()} products in your wishlist`
     let productStr = ""
     for (let i=0; i < wishlist.length; i+=1) {
-        let {qty, id} = wishlist[i]
-        let {title, price, thumbnail} = wishlist[i].product
+        let {title, price, thumbnail, qty, id} = wishlist[i]
         
         productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
         <button class="remove" data-id="${id}">Remove</button>
@@ -130,7 +131,7 @@ function getQty() {
 function getTotal() {
     let total = 0
     for(let i=0; i < wishlist.length; i+=1) {
-        total += wishlist[i].product.price * wishlist[i].qty
+        total += wishlist[i].price * wishlist[i].qty
     }
     return total.toFixed(2)
 }

@@ -60,52 +60,50 @@ else {
 const cartBtn = document.querySelector(".add-cart");
 const wishListBtn = document.querySelector(".add-Wishlist");
 
-//Local storage selectors
-//const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-//const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//eventlisteners
+//Eventlisteners
 cartBtn.addEventListener("click", ()=>{addToCartModal(product.id)});
 wishListBtn.addEventListener("click", ()=>{addToWishlistModal(product.id)});
-//function for add cart btn
+//Function for add cart btn
 function setCartLocalStorage (cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-//function for add wishlist btn
+//Function for add wishlist btn
 function setWishlistLocalStorage (wishlist) {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
 }
 
-//function for add product to wishlist
+//Function for add product to wishlist
 function addToWishlistModal(id) {
-    let wishlistObject = {id:id, qty:1};
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    for(let i=0; i < wishlist.length; i+=1) {
+        if(wishlist[i].id === id) {
+            wishlist[i].qty += 1
+            setWishlistLocalStorage(wishlist)
+            return
+        }
+    }
     let product = ph.getByID(id);
     if (!product) return null;
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    let wishlistIndex = wishlist.findIndex(i => i.id === id);
-    
-    if (wishlistIndex > -1) 
-        wishlist[wishlistIndex].qty += 1
-    else
-        wishlist.push(wishlistObject)
+    product.qty = 1
+    wishlist.push(product)
 
     setWishlistLocalStorage(wishlist)
 }
 
-//function for add product to cart
-
 function addToCartModal(id) {
-    let cartObject = {id:id, qty:1};
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    for(let i=0; i < cart.length; i+=1) {
+        if(cart[i].id === id) {
+            cart[i].qty += 1
+            setCartLocalStorage(cart)
+            return
+        }
+    }
     let product = ph.getByID(id);
     if (!product) return null;
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let cartIndex = cart.findIndex(i => i.id === id);
-    
-    if (cartIndex > -1)
-        cart[cartIndex].qty += 1
-    else
-        cart.push(cartObject)
+    product.qty = 1
+    cart.push(product)
 
     setCartLocalStorage(cart)
 }

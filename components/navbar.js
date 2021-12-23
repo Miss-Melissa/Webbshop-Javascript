@@ -6,7 +6,7 @@ navbarTemplate.innerHTML = `
     <div class="nav-container">
       <a class="nav-link home-logo" href="/"><img width="50" src="./Bilder/wie2-svg.svg"><span>WIE GAMING</span></a>
       <span>
-        <a class="nav-link" href="#"><i class="bi bi-suit-heart-fill"></i></a>
+        <a id="nav-wishlist-btn" class="nav-link" href="#"><i class="bi bi-suit-heart-fill"></i></a>
         <a id="nav-cart-btn" class="nav-link" href="#"><i class="bi bi-cart3"></i></a>
         <a class="nav-link nav-burger" href="#"><i class="bi bi-justify"></i></a>
       </span>
@@ -25,6 +25,7 @@ navbarTemplate.innerHTML = `
     </div>
   </div>
 </nav>
+<wishlist-modal></wishlist-modal>
 <cart-modal></cart-modal>
 `;
 
@@ -51,16 +52,17 @@ class NavBar extends HTMLElement {
   }
 
   connectedCallback(){
-    const openModal = new Event('open-modal');
+    const openCart = new Event('open-cart');
+    const openWishlist = new Event('open-wishlist');
 
     this.querySelector('#nav-cart-btn').addEventListener('click', () => {
-      document.dispatchEvent(openModal);
+      document.dispatchEvent(openCart);
+    });
+
+    this.querySelector('#nav-wishlist-btn').addEventListener('click', () => {
+      document.dispatchEvent(openWishlist);
     });
   }
-
-
-
-
 }
 
 //'nav-bar' blir html elementet, i exempelSida.html ska det alltså stå <nav-bar></nav-bar>

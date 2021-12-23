@@ -32,17 +32,9 @@ cartModalTemplate.innerHTML = `
     </div>
 `;
 
-
 class CartModal extends HTMLElement {
     constructor() {
         super();
-
-        //Lägger till några test items i cart
-        /* cartHandler.addToCart("yDT4wCy");
-        cartHandler.addToCart("e62OnJj");
-        cartHandler.addToCart("1hmhMDv");
-        cartHandler.addToCart("i3TyjjQ");
-        cartHandler.addToCart("PSWXe90"); */
 
         //Skapar html element
         this.appendChild(cartModalTemplate.content.cloneNode(true));

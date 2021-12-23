@@ -1,6 +1,5 @@
 const wishlistModalTemplate = document.createElement('template');
 wishlistModalTemplate.innerHTML = `
-<button class="fas fa-heart">Click Here</button>
 <div class="wishlist-modal">
 <div class="wishlist-modal-content">
     <div class="modal-header">
@@ -19,9 +18,9 @@ wishlistModalTemplate.innerHTML = `
         <div class="wishlist-total">
             <!-- wishlist total -->
         </div>
-
+        
         <a href="#">
-            <button type="submit" class="add-all-to-cart">Add All To Cart</button>
+            <button type="submit" class="add-all-to-cart btn btn-secondary">Lägg till alla i varukorg</button>
         </a>
     </section>
 </div>
@@ -160,21 +159,22 @@ class WishlistModal extends HTMLElement {
         // --------------------------------------------------------------------
         // SHOW PRODUCT
         function showProduct() {
-            productQty.innerHTML = `You have ${getQty()} products in your wishlist`
+            productQty.innerHTML = `Du har ${getQty()} produkter i din wishlist`
             let productStr = ""
             for (let i = 0; i < wishlist.length; i += 1) {
                 let { title, price, thumbnail, qty, id } = wishlist[i]
 
-                productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
-        <button class="remove" data-id="${id}">Remove</button>
-        <button class="add-one" data-id="${id}">+</button>
-        <button class="remove-one" data-id="${id}">-</button>
-        <button class="add-to-cart" type="submit" data-id="${id}">Add To Cart</button>
-        </li>`
+                productStr += `<li><img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
+                    <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>
+                    <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
+                    </li>`
             }
             productList.innerHTML = productStr
             wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}`
         }
+        //TOG BORT, EJ RELEVANT FÖR WISHLIST
+        /*<button class="add-one" data-id="${id}">+</button>
+        <button class="remove-one" data-id="${id}">-</button> */
 
         // --------------------------------------------------------------------
         // GET QTY

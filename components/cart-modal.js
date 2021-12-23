@@ -12,22 +12,16 @@ cartModalTemplate.innerHTML = `
                 <div class="product-qty">
                     <!-- total amount of products in cart -->
                 </div>
-                <ul class="product-list">
+                <div class="product-list">
                     <!-- cart products  -->
-                </ul>
+                </div>
                 <div class="cart-total">
                     <!-- cart total -->
                 </div>
-                <a href="#">
-                    <button type="submit" class="purchase-button">Purchase</button>
+                <a href="checkout.html">
+                    <button type="submit" class="purchase-button btn btn-primary">Till kassan</button>
                 </a>
             </div>
-
-            <div class="randomProducts">
-                <i>Psst! Du har väl inte missat dessa produkter..</i>
-                <i class="far fa-grin-wink"></i>
-            </div>
-
         </div>
     </div>
 `;
@@ -124,11 +118,10 @@ class CartModal extends HTMLElement {
             for (let i = 0; i < cart.length; i += 1) {
                 const { title, price, thumbnail, qty, id } = cart[i]
 
-                productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
-                <button class="remove" data-id="${id}">Remove</button>
-                <button class="add-one" data-id="${id}">+</button>
-                <button class="remove-one" data-id="${id}">-</button>
-                </li>`
+                productStr += `<img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
+                <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
+                <button class="add-one btn btn-secondary" data-id="${id}">+</button>
+                <button class="remove btn btn-danger" data-id="${id}">Remove</button>`
             }
             productList.innerHTML = productStr
             cartTotal.innerHTML = `Cart total: ${getTotal()}`

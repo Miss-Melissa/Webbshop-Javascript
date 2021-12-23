@@ -12,9 +12,9 @@ cartModalTemplate.innerHTML = `
                 <div class="product-qty">
                     <!-- total amount of products in cart -->
                 </div>
-                <div class="product-list">
+                <ul class="product-list">
                     <!-- cart products  -->
-                </div>
+                </ul>
                 <div class="cart-total">
                     <!-- cart total -->
                 </div>
@@ -116,12 +116,12 @@ class CartModal extends HTMLElement {
             productQty.innerHTML = `You have ${getQty()} products in your cart`
             let productStr = ""
             for (let i = 0; i < cart.length; i += 1) {
-                const { title, price, thumbnail, qty, id } = cart[i]
+                const {title, price, thumbnail, qty, id } = cart[i]
 
-                productStr += `<img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
+                productStr += `<li><img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
                 <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
                 <button class="add-one btn btn-secondary" data-id="${id}">+</button>
-                <button class="remove btn btn-danger" data-id="${id}">Remove</button>`
+                <button class="remove btn btn-danger" data-id="${id}">Remove</button></li>`
             }
             productList.innerHTML = productStr
             cartTotal.innerHTML = `Cart total: ${getTotal()}`

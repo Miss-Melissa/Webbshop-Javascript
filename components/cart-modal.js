@@ -113,18 +113,22 @@ class CartModal extends HTMLElement {
         // --------------------------------------------------------------------
         // SHOW PRODUCT
         function showProduct() {
-            productQty.innerHTML = `You have ${getQty()} products in your cart`
+            productQty.innerHTML = `Du har ${getQty()} produkter i din varukorg`
             let productStr = ""
             for (let i = 0; i < cart.length; i += 1) {
                 const { title, price, thumbnail, qty, id } = cart[i]
 
-                productStr += `<img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
+                productStr += `<li class="li-item"><div class="product-img-name"><img referrerpolicy="no-referrer" src="${thumbnail}">
+                <span class="img-li-description">${title} ${price} x ${qty} = ${qty * price}kr</span></div>
+                <div class="product-btns-li">
                 <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
                 <button class="add-one btn btn-secondary" data-id="${id}">+</button>
-                <button class="remove btn btn-danger" data-id="${id}">Remove</button>`
+                <button class="remove btn btn-danger" data-id="${id}">Ta bort</button></li>
+                </div>
+                `                
             }
             productList.innerHTML = productStr
-            cartTotal.innerHTML = `Cart total: ${getTotal()}`
+            cartTotal.innerHTML = `Cart total: ${getTotal()}kr`
         }
         // --------------------------------------------------------------------
         // GET QTY

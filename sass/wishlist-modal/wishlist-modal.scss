@@ -1,14 +1,12 @@
-.fa-shopping-cart {
-    padding: 10px 20px;
-    color: $color-whitesmoke;
-}
+@import "../variable.scss";
 
-.fa-shopping-cart:hover {
-    background-color: $c2-dark-grey;
+.fa-heart {
+    padding: 10px 20px;
+    color: $c4-red;
 }
 
 // nedan är alltså hela ytan när man trycker på knappen, inte själva varukorgen.
-.varukorg-modal {
+.wishlist-modal {
     display: none;
     position: fixed;
     z-index: 10000;
@@ -20,7 +18,7 @@
     background-color: rgba(151, 143, 143, 0.5); // opacity 0.5
 }
 
-.varukorg-modal-content {
+.wishlist-modal-content {
     background-color: whitesmoke;
     margin: 5% auto;
     width: 95%;
@@ -100,5 +98,4 @@
 }
 
 //längst ned
-@import "./_mediaqCartModal.scss";
-
+@import "./wishlist-mediaq.scss";

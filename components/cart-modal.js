@@ -32,6 +32,7 @@ cartModalTemplate.innerHTML = `
     </div>
 `;
 
+
 class CartModal extends HTMLElement {
     constructor() {
         super();
@@ -40,7 +41,7 @@ class CartModal extends HTMLElement {
         this.appendChild(cartModalTemplate.content.cloneNode(true));
 
         //Custom Event för att öppna varukorgsmodal kommer från navbaren
-        document.addEventListener("open-modal", () => {
+        document.addEventListener("open-cart", () => {
             modal.style.display = "block";
         });
 

@@ -34,6 +34,26 @@
     }
 }
 
+@media only screen and (max-width: 1100px) {
+    .main-container {
+        
+        .products-container *:last-child {
+            display: none;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 829px) {
+    .main-container {
+        
+        .products-container *:last-child {
+            display: block;
+        }
+
+    }
+}
+
 @media only screen and (max-width: $breakpoint-desktop) {
     .main-container{
         p {
@@ -50,7 +70,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $breakpoint-ipad) {
     .carousel-item {
         height: 300px!important;
     }

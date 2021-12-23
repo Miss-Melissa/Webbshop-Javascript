@@ -23,17 +23,8 @@ cartModalTemplate.innerHTML = `
                 </a>
             </div>
 
-            <div class="modal-summa">
-                <h4>Totalsumma: <span>0</span> kr</h4>
-            </div>
-
-            <div class="to-checkout">
-                <button class="btn-checkout">Till kassan</button>
-            </div>
-
-            <div class="wishlist-suggestions">
-                <i>Psst! Du har väl inte glömt att lägga till dessa produkter från din
-                    wishlist..</i>
+            <div class="randomProducts">
+                <i>Psst! Du har väl inte missat dessa produkter..</i>
                 <i class="far fa-grin-wink"></i>
             </div>
 
@@ -80,7 +71,114 @@ class CartModal extends HTMLElement {
         function outsideClick(click) {
             if (click.target === modal)
                 closeVarukorg();
-        };  
+        };
+
+        const productList = document.querySelector(".product-list")
+        const productQty = document.querySelector(".product-qty")
+        const cartTotal = document.querySelector(".cart-total")
+        const purchase = document.querySelector(".purchase-button")
+
+        const cart = JSON.parse(localStorage.getItem("cart")) || []
+
+        // --------------------------------------------------------------------
+        // setItem cart to local storage
+        function setCartLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // --------------------------------------------------------------------
+        // HANDLE BUTTON CLICKS ON PRODUCTS
+        productList.onclick = function (e) {
+            if (e.target && e.target.classList.contains("remove")) {
+                const id = e.target.dataset.id
+                removeProduct(id)
+            } else if (e.target && e.target.classList.contains("add-one")) {
+                const id = e.target.dataset.id
+                addProduct(id)
+                setCartLocalStorage()
+            } else if (e.target && e.target.classList.contains("remove-one")) {
+                const id = e.target.dataset.id
+                removeProduct(id, 1)
+            }
+        }
+
+        // --------------------------------------------------------------------
+        // PURCHASE BUTTON THAT ADD CART TO LOCAL STORAGE.
+        purchase.onclick = function (e) {
+            if (e.target && e.target.classList.contains("purchase-button")) {
+                setCartLocalStorage()
+            }
+            showProduct()
+        }
+
+        // --------------------------------------------------------------------
+        // ADD PRODUCT TO CART
+        function addProduct(id) {
+            for (let i = 0; i < cart.length; i += 1) {
+                if (cart[i].id === id) {
+                    cart[i].qty += 1
+                    showProduct()
+                    return
+                }
+            }
+        }
+
+        // --------------------------------------------------------------------
+        // SHOW PRODUCT
+        function showProduct() {
+            productQty.innerHTML = `You have ${getQty()} products in your cart`
+            let productStr = ""
+            for (let i = 0; i < cart.length; i += 1) {
+                const { title, price, thumbnail, qty, id } = cart[i]
+
+                productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
+                <button class="remove" data-id="${id}">Remove</button>
+                <button class="add-one" data-id="${id}">+</button>
+                <button class="remove-one" data-id="${id}">-</button>
+                </li>`
+            }
+            productList.innerHTML = productStr
+            cartTotal.innerHTML = `Cart total: ${getTotal()}`
+        }
+        // --------------------------------------------------------------------
+        // GET QTY
+        function getQty() {
+            let qty = 0
+            for (let i = 0; i < cart.length; i += 1) {
+                qty += cart[i].qty
+            }
+            return qty
+        }
+
+        // --------------------------------------------------------------------
+        // GET TOTAL
+        function getTotal() {
+            let total = 0
+            for (let i = 0; i < cart.length; i += 1) {
+                total += cart[i].price * cart[i].qty
+            }
+            return total.toFixed(2)
+        }
+
+        // --------------------------------------------------------------------
+        // REMOVE PRODUCT
+        function removeProduct(id, qty = 0) {
+            for (let i = 0; i < cart.length; i += 1) {
+                if (cart[i].id === id) {
+                    if (qty > 0) {
+                        cart[i].qty -= 1
+                    }
+                    if (cart[i].qty < 1 || qty === 0) {
+                        cart.splice(i, 1)
+                    }
+                    setCartLocalStorage()
+                    showProduct()
+                    return
+                }
+            }
+        }
+
+        showProduct()
 
     }
 }

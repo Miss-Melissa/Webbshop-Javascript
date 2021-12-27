@@ -13,33 +13,34 @@
     border: 0.063rem solid #ced4da;
     border-radius: 0.25rem;
     margin-bottom: 1%;
+    margin-top: 1%;
   }
+}
 
-  input:focus {
-    outline: none !important;
-    border-color: $c1-blue;
-    box-shadow: 0 0 0.625rem $c1-blue;
-  }
+input:focus {
+  outline: none !important;
+  border-color: $c1-blue;
+  box-shadow: 0 0 0.625rem $c1-blue;
+}
 
-  .sidetoside {
-    display: flex;
-  }
+.sidetoside {
+  display: flex;
+}
 
-  .formgroup-sidetoside {
-    width: 100%;
-  }
+.formgroup-sidetoside {
+  width: 100%;
+}
 
-  hr {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem !important;
-    border-top: 0.063rem solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem !important;
-  }
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem !important;
+  border-top: 0.063rem solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem !important;
+}
 
-  .checkbox {
-    position: relative;
-    display: block;
-    min-height: 1.5rem;
-    padding-left: 1.5rem;
-  }
+.checkbox {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
 }

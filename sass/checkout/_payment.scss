@@ -18,10 +18,13 @@
   .div-bottom {
     margin-bottom: 1rem !important;
   }
-
-  .btn1 {
-    background-color: $c1-blue;
-    width: 70rem;
-    margin-bottom: 2rem;
+  .buttoncenter {
+    display: flex;
+    justify-content: center;
+    .btn1 {
+      background-color: $c1-blue;
+      width: 81rem;
+      margin-bottom: 2rem;
+    }
   }
 }

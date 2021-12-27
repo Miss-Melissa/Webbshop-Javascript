@@ -131,18 +131,6 @@ function payFunction(e) {
 ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     div.style.listStyleType = "none";
 
-
-    /**
-   
-    let productList = document.querySelector("#product-list").value
-    let cartTotal = document.querySelector("#cart-total").value
-
-    const buyerInfo = document.querySelector("#buyerinfo");
-
-    buyerInfo.innerHTML = `<li>${productList} & ${cartTotal}</li>`
-    buyerInfo.style.listStyleType = "none";*/
-
-
     const a = document.getElementById("postnord")
     const b = document.getElementById("homedelivery")
     const c = document.getElementById("instabox")
@@ -166,6 +154,7 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         document.querySelector("#betalinfo").innerHTML = d;
     }
 
+    /*
     // om input inte fylls i funkar inte knappen (Dina uppgifter)
     if (!shopperInfo.mail.value) return alert("DU MÅSTE FYLLA I MAILADRESS");
     if (!shopperInfo.firstName.value) return alert("DU MÅSTE FYLLA I FÖRNAMN");
@@ -179,7 +168,7 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     if (!payWithCart.cardNumber.value) return alert("DU MÅSTE FYLLA I KORTNUMMER");
     if (!payWithCart.cardexpire.value) return alert("DU MÅSTE FYLLA I UTGÅNGSDATUM");
     if (!payWithCart.cardCvv.value) return alert("DU MÅSTE FYLLA I CVV");
-
+*/
 
 
 

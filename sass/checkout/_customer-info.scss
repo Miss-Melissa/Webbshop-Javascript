@@ -1,25 +1,45 @@
 .container {
+  .form-input {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 0.125rem);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #575757;
+    background-color: whitesmoke;
+    background-clip: padding-box;
+    border: 0.063rem solid #ced4da;
+    border-radius: 0.25rem;
+    margin-bottom: 1%;
+  }
 
-    .sidetoside {
-        display: flex;
-    }
+  input:focus {
+    outline: none !important;
+    border-color: $c1-blue;
+    box-shadow: 0 0 0.625rem $c1-blue;
+  }
 
-    .formgroup-sidetoside {
-        width: 100%;
-    }
+  .sidetoside {
+    display: flex;
+  }
 
-    hr {
-        margin-top: 1rem;
-        margin-bottom: 1.5rem !important;
-        border-top: 0.063rem solid rgba(0, 0, 0, .1);
-        margin-bottom: 1.5rem !important;
-    }
+  .formgroup-sidetoside {
+    width: 100%;
+  }
 
-    .checkbox {
-        position: relative;
-        display: block;
-        min-height: 1.5rem;
-        padding-left: 1.5rem;
-    }
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem !important;
+    border-top: 0.063rem solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem !important;
+  }
 
+  .checkbox {
+    position: relative;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+  }
 }

@@ -1,3 +1,5 @@
+document.querySelector('#btnPay').addEventListener('click', payFunction);
+
 const shopperInfo = {
     mail: document.getElementById('mailInput'),
     firstName: document.getElementById('namnInput'),
@@ -29,15 +31,15 @@ function setCartLocalStorage() {
 
 // --------------------------------------------------------------------
 // HANDLE BUTTON CLICKS ON PRODUCTS
-productList.onclick = function(e) {
-    if(e.target && e.target.classList.contains("remove")) {
+productList.onclick = function (e) {
+    if (e.target && e.target.classList.contains("remove")) {
         const id = e.target.dataset.id
         removeProduct(id)
-    } else if(e.target && e.target.classList.contains("add-one")) {
+    } else if (e.target && e.target.classList.contains("add-one")) {
         const id = e.target.dataset.id
         addProduct(id)
         setCartLocalStorage()
-    } else if(e.target && e.target.classList.contains("remove-one")) {
+    } else if (e.target && e.target.classList.contains("remove-one")) {
         const id = e.target.dataset.id
         removeProduct(id, 1)
     }
@@ -46,9 +48,9 @@ productList.onclick = function(e) {
 // --------------------------------------------------------------------
 // ADD PRODUCT TO CART
 function addProduct(id) {
-    for(let i=0; i < cart.length; i+=1) {
-        if(cart[i].id === id) {
-            cart[i].qty +=1
+    for (let i = 0; i < cart.length; i += 1) {
+        if (cart[i].id === id) {
+            cart[i].qty += 1
             showProduct()
             return
         }
@@ -61,7 +63,7 @@ function showProduct() {
     productQty.innerHTML = `${getQty()}`
     let productStr = ""
     for (let i = 0; i < cart.length; i += 1) {
-        const {title, price, thumbnail, qty, id } = cart[i]
+        const { title, price, thumbnail, qty, id } = cart[i]
 
         productStr += `<li class="list"><img referrerpolicy="no-referrer" src="${thumbnail}">${title} ${price}kr x ${qty} = ${qty * price}kr 
         <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
@@ -76,7 +78,7 @@ function showProduct() {
 // GET QTY
 function getQty() {
     let qty = 0
-    for(let i=0; i < cart.length; i+=1) {
+    for (let i = 0; i < cart.length; i += 1) {
         qty += cart[i].qty
     }
     return qty
@@ -86,7 +88,7 @@ function getQty() {
 // GET TOTAL
 function getTotal() {
     let total = 0
-    for(let i=0; i < cart.length; i+=1) {
+    for (let i = 0; i < cart.length; i += 1) {
         total += cart[i].price * cart[i].qty
     }
     return total.toFixed(2)
@@ -95,12 +97,12 @@ function getTotal() {
 // --------------------------------------------------------------------
 // REMOVE PRODUCT
 function removeProduct(id, qty = 0) {
-    for(let i=0; i < cart.length; i+=1) {
-        if(cart[i].id === id) {
-            if(qty > 0) {
+    for (let i = 0; i < cart.length; i += 1) {
+        if (cart[i].id === id) {
+            if (qty > 0) {
                 cart[i].qty -= 1
             }
-            if(cart[i].qty < 1 || qty === 0) {
+            if (cart[i].qty < 1 || qty === 0) {
                 cart.splice(i, 1)
             }
             setCartLocalStorage()
@@ -130,6 +132,17 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     div.style.listStyleType = "none";
 
 
+    /**
+   
+    let productList = document.querySelector("#product-list").value
+    let cartTotal = document.querySelector("#cart-total").value
+
+    const buyerInfo = document.querySelector("#buyerinfo");
+
+    buyerInfo.innerHTML = `<li>${productList} & ${cartTotal}</li>`
+    buyerInfo.style.listStyleType = "none";*/
+
+
     const a = document.getElementById("postnord")
     const b = document.getElementById("homedelivery")
     const c = document.getElementById("instabox")
@@ -153,21 +166,23 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         document.querySelector("#betalinfo").innerHTML = d;
     }
 
+    // om input inte fylls i funkar inte knappen (Dina uppgifter)
+    if (!shopperInfo.mail.value) return alert("DU MÅSTE FYLLA I MAILADRESS");
+    if (!shopperInfo.firstName.value) return alert("DU MÅSTE FYLLA I FÖRNAMN");
+    if (!shopperInfo.lastName.value) return alert("DU MÅSTE FYLLA I EFTERNAMN");
+    if (!shopperInfo.adress.value) return alert("DU MÅSTE FYLLA I ADRESS");
+    if (!shopperInfo.postCode.value) return alert("DU MÅSTE FYLLA I POSTKOD");
+    if (!shopperInfo.postOrt.value) return alert("DU MÅSTE FYLLA I POSTORT");
 
     // om input inte fylls i funkar inte knappen (Betalning)
-    if (!payWithCart.cardName.value) return alert("DU MÅSTE FYLLA I");
-    if (!payWithCart.cardNumber.value) return;
-    if (!payWithCart.cardexpire.value) return;
-    if (!payWithCart.cardCvv.value) return;
+    if (!payWithCart.cardName.value) return alert("DU MÅSTE FYLLA I KORTNAMN");
+    if (!payWithCart.cardNumber.value) return alert("DU MÅSTE FYLLA I KORTNUMMER");
+    if (!payWithCart.cardexpire.value) return alert("DU MÅSTE FYLLA I UTGÅNGSDATUM");
+    if (!payWithCart.cardCvv.value) return alert("DU MÅSTE FYLLA I CVV");
 
 
-    // om input inte fylls i funkar inte knappen (Dina uppgifter)
-    if (!shopperInfo.mail.value) return;
-    if (!shopperInfo.firstName.value) return;
-    if (!shopperInfo.lastName.value) return;
-    if (!shopperInfo.adress.value) return;
-    if (!shopperInfo.postCode.value) return;
-    if (!shopperInfo.postOrt.value) return;
+
+
 
     // hämta modal
     const modal = document.getElementById("myModal");
@@ -203,6 +218,24 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         shopperInfo[key].value = "";
     });
 }
+
+
+// discoun button lagt till en alert och att inputfältet blir tom efter man tryckt på knappen
+document.querySelector('.btn2').addEventListener('click', discountButton);
+
+const discount = document.querySelector('#discountInput');
+
+function discountButton() {
+    alert("Fyll i en GILLTIG Rabbatkod!!! 🤪🤪🤪")
+
+    Object.keys(discount).forEach(key => {
+
+        discount[key].value = "";
+
+    });
+}
+
+
 
 // checkbox leverans och betalning
 function myCheckBox() {
@@ -244,4 +277,7 @@ function myCheckBox() {
     }
 }
 
-document.querySelector('#btnPay').addEventListener('click', payFunction);
+
+
+
+

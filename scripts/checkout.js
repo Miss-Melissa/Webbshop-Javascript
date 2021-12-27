@@ -1,5 +1,3 @@
-document.querySelector('#btnPay').addEventListener('click', payFunction);
-
 const shopperInfo = {
     mail: document.getElementById('mailInput'),
     firstName: document.getElementById('namnInput'),
@@ -60,19 +58,19 @@ function addProduct(id) {
 // --------------------------------------------------------------------
 // SHOW PRODUCT
 function showProduct() {
-    productQty.innerHTML = `You have ${getQty()} products in your cart`
+    productQty.innerHTML = `${getQty()}`
     let productStr = ""
-    for (let i=0; i < cart.length; i+=1) {
-        const {title, price, qty, id} = cart[i]
+    for (let i = 0; i < cart.length; i += 1) {
+        const {title, price, thumbnail, qty, id } = cart[i]
 
-        productStr += `<li>${title} $${price} x ${qty} = $${qty * price} 
-        <button class="remove" data-id="${id}">Remove</button>
-        <button class="add-one" data-id="${id}">+</button>
-        <button class="remove-one" data-id="${id}">-</button>
+        productStr += `<li class="list"><img referrerpolicy="no-referrer" src="${thumbnail}">${title} ${price}kr x ${qty} = ${qty * price}kr 
+        <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
+        <button class="add-one btn btn-secondary" data-id="${id}">+</button>
+        <button class="remove btn btn-danger" data-id="${id}">Remove</button>
         </li>`
     }
     productList.innerHTML = productStr
-    cartTotal.innerHTML = `Cart total: ${getTotal()}`
+    cartTotal.innerHTML = `${getTotal()}kr`
 }
 // --------------------------------------------------------------------
 // GET QTY
@@ -157,7 +155,7 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
 
 
     // om input inte fylls i funkar inte knappen (Betalning)
-    if (!payWithCart.cardName.value) return;
+    if (!payWithCart.cardName.value) return alert("DU MÅSTE FYLLA I");
     if (!payWithCart.cardNumber.value) return;
     if (!payWithCart.cardexpire.value) return;
     if (!payWithCart.cardCvv.value) return;
@@ -245,3 +243,5 @@ function myCheckBox() {
         text.style.display = "none";
     }
 }
+
+document.querySelector('#btnPay').addEventListener('click', payFunction);

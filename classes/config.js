@@ -1,6 +1,6 @@
 class Token {
     constructor(){
-        this.token = "Bearer 8ab5c33ecf840ca2bf5d848916c8363a3c617d7d"};
+        this.token = "Bearer 670fc3f5407bf9abce5fd0521654ac2985fb0070"};
     };
 
     export default Token;

@@ -13,10 +13,9 @@
     position: fixed;
     z-index: 10000;
     right: 0;
-    top: 0; // påverkar inget just nu så länge det inte är 0, då läggs den över knappen
+    top: 0; 
     width: 100%;
-    height: 100%;
-    overflow: auto; // gör så att sidan förlängs om det finns massa innehåll.
+    height: 100%; // hela skärmen
     background-color: rgba(151, 143, 143, 0.5); // opacity 0.5
 }
 
@@ -24,11 +23,13 @@
     background-color: whitesmoke;
     margin: 5% auto;
     width: 95%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17); // ser ni något?
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17); 
     animation-name:modalopen;
     animation-duration: 1s;
+    overflow: auto;  // gör så att sidan förlängs om det finns massa innehåll.
 }
 
+// ger backgrunden opacity när man öppnar modalen.
 @keyframes modalopen {
     from{opacity: 0}
     to{opacity:1}
@@ -63,26 +64,23 @@
         margin-left: 0.3rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #9a9a9a;
     }
-
-    .product-list {
-        border: 1px solid black;
-    }
-
 
     .li-item {
         list-style-type: none;
         margin-left: 0.2rem;
-        
-        img {
-            mix-blend-mode: multiply;
-            border: 1px solid blue;
-            height: 5rem;
-        }
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #9A9A9A;
 
         .product-img-name {
-            border: 1px solid orange;
             display: flex;
+
+            img {
+                mix-blend-mode: multiply;
+                height: 5rem;
+            }
 
             .img-li-description {
                 display: flex;
@@ -93,12 +91,10 @@
         }
 
         .product-btns-li {
-            border:1px solid gray;
             display: flex;
             width: 50%;
-            margin: auto;
+            max-width: 200px;
             justify-content: space-evenly;
-            margin-bottom: 1rem;
         }
     }
 
@@ -113,48 +109,11 @@
         display: flex;
         justify-content: center;
 
-        // har lite problem med att styla knappen, eventuellt för att den är tagen från bootstrap (eller likande?)
         .purchase-button {
             margin-bottom: 2rem;
+            width: 18rem;
         }
     }
-}
-
-.modal-summa {
-    background-color: $c3-light-grey;
-    text-align: center;
-    width: 60%;
-    margin: 1rem auto;
-    padding: 1rem;
-}
-
-.modal-summa > h3 {
-    color:whitesmoke;
-}
-
-.to-checkout {
-    display: flex;
-    justify-content: center;
-}
-
-.btn-checkout {
-    margin-bottom: 1rem;
-    padding: 1rem 2rem;
-    align-self: center;
-    cursor: pointer;
-    background-color: $c5-yellow;
-    color: whitesmoke;
-}
-
-.btn-checkout:active{
-    background-color: $c4-red;
-}
-
-
-.wishlist-suggestions {
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
 }
 
 //längst ned

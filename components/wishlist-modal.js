@@ -1,29 +1,28 @@
 const wishlistModalTemplate = document.createElement('template');
 wishlistModalTemplate.innerHTML = `
 <div class="wishlist-modal">
-<div class="wishlist-modal-content">
-    <div class="modal-header">
-        <span class="close-btn">&times;</span>
-        <h2>Wishlist</h2>
+    <div class="wishlist-modal-content">
+        <div class="modal-header">
+            <span class="close-btn">&times;</span>
+            <h2>Wishlist</h2>
+        </div>
+        <div class="modal-products">
+            <div class="product-qty">
+                <!-- total amount of products in wishlist -->
+            </div>
+            <div class="product-list">
+                <!-- wishlist products  -->
+            </div>
+            <div class="wishlist-total">
+                <!-- wishlist total -->
+            </div>
+            <div class="to-cart-btn"
+                <a href="#">
+                    <button type="submit" class="add-all-to-cart btn btn-secondary">Lägg till alla i varukorg</button>
+                </a>
+            </div>
+        </div>
     </div>
-    <section class="modal-produkter">
-        <div class="product-qty">
-            <!-- total amount of products in wishlist -->
-        </div>
-
-        <ul class="product-list">
-            <!-- wishlist products  -->
-        </ul>
-
-        <div class="wishlist-total">
-            <!-- wishlist total -->
-        </div>
-        
-        <a href="#">
-            <button type="submit" class="add-all-to-cart btn btn-secondary">Lägg till alla i varukorg</button>
-        </a>
-    </section>
-</div>
 </div>`;
 
 class WishlistModal extends HTMLElement {
@@ -159,18 +158,26 @@ class WishlistModal extends HTMLElement {
         // --------------------------------------------------------------------
         // SHOW PRODUCT
         function showProduct() {
-            productQty.innerHTML = `Du har ${getQty()} produkter i din wishlist`
+            productQty.innerHTML = `Du har ${getQty()} produkt(er) i din wishlist`
             let productStr = ""
             for (let i = 0; i < wishlist.length; i += 1) {
                 let { title, price, thumbnail, qty, id } = wishlist[i]
 
-                productStr += `<li><img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
-                    <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>
-                    <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
-                    </li>`
+                productStr += `
+                <li class="li-item">
+                    <div class="product-img-name">
+                        <img class="product-img-name" referrerpolicy="no-referrer" src="${thumbnail}"/>
+                        <span class="img-li-description">${title} ${price} x ${qty} = $${qty * price}kr</span>
+                    </div> 
+                    <div class="wishlist-btns-li">
+                        <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>
+                        <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
+                    </div>
+                </li>
+                `
             }
             productList.innerHTML = productStr
-            wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}`
+            wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
         }
         //TOG BORT, EJ RELEVANT FÖR WISHLIST
         /*<button class="add-one" data-id="${id}">+</button>

@@ -14,7 +14,6 @@
     top: 0; // påverkar inget just nu så länge det inte är 0, då läggs den över knappen
     width: 100%;
     height: 100%;
-    overflow: auto; // gör så att sidan förlängs om det finns massa innehåll.
     background-color: rgba(151, 143, 143, 0.5); // opacity 0.5
 }
 
@@ -25,6 +24,7 @@
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17); // ser ni något?
     animation-name:modalopen;
     animation-duration: 1s;
+    overflow: auto; // gör så att sidan förlängs om det finns massa innehåll.
 }
 
 @keyframes modalopen {
@@ -55,42 +55,69 @@
     cursor: pointer;
 }
 
-.modal-summa {
-    background-color: $c3-light-grey;
-    text-align: center;
-    width: 60%;
-    margin: 1rem auto;
-    padding: 1rem;
+.modal-products {
+    
+    .product-qty {
+        margin-left: 0.3rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #9A9A9A;
+    }
+
+    .li-item {
+        list-style-type: none;
+        margin-left: 0.3rem;
+        padding-left: 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #9A9A9A;
+
+        .product-img-name {
+            display: flex;
+
+            img {
+                mix-blend-mode: multiply;
+                height: 5rem;
+                margin-left:1rem;
+            }
+
+            .img-li-description {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 0.5rem;
+                margin-top: 1rem;
+            }
+        }
+
+        .wishlist-btns-li {
+            display: flex;
+            width: 50%;
+            max-width: 200px;
+            justify-content: space-evenly;
+            margin-left:1rem;
+
+            .add-to-cart {
+                margin-right:1rem;
+            }
+        }
+    }
+
+    .wishlist-total {
+        display: flex;
+        justify-content: center;
+        margin-top:1rem;
+        margin-bottom: 1rem;
+    }
+
+    .to-cart-btn {
+        display: flex;
+        justify-content: center;
+
+        .add-all-to-cart {
+            margin-bottom: 2rem;
+            width: 18rem;
+        }
+    }
 }
-
-.modal-summa > h3 {
-    color:whitesmoke;
-}
-
-.to-checkout {
-    display: flex;
-    justify-content: center;
-}
-
-.btn-checkout {
-    margin-bottom: 1rem;
-    padding: 1rem 2rem;
-    align-self: center;
-    cursor: pointer;
-    background-color: $c5-yellow;
-    color: whitesmoke;
-}
-
-.btn-checkout:active{
-    background-color: $c4-red;
-}
-
-
-.wishlist-suggestions {
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-}
-
 //längst ned
 @import "./wishlist-mediaq.scss";

@@ -2,12 +2,10 @@ const cartModalTemplate = document.createElement('template');
 cartModalTemplate.innerHTML = `
 <div class="varukorg-modal">
         <div class="varukorg-modal-content">
-
             <div class="modal-header">
                 <span class="close-btn">&times;</span>
                 <h2>Varukorg</h2>
             </div>
-
             <div class="modal-products">
                 <div class="product-qty">
                     <!-- total amount of products in cart -->
@@ -115,18 +113,23 @@ class CartModal extends HTMLElement {
         // --------------------------------------------------------------------
         // SHOW PRODUCT
         function showProduct() {
-            productQty.innerHTML = `Du har ${getQty()} produkter i din varukorg`
+            productQty.innerHTML = `Du har ${getQty()} produkt(er) i din varukorg`
             let productStr = ""
             for (let i = 0; i < cart.length; i += 1) {
                 const { title, price, thumbnail, qty, id } = cart[i]
 
-                productStr += `<li class="li-item"><div class="product-img-name"><img referrerpolicy="no-referrer" src="${thumbnail}">
-                <span class="img-li-description">${title} ${price} x ${qty} = ${qty * price}kr</span></div>
-                <div class="product-btns-li">
-                <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
-                <button class="add-one btn btn-secondary" data-id="${id}">+</button>
-                <button class="remove btn btn-danger" data-id="${id}">Ta bort</button></li>
-                </div>
+                productStr += `
+                <li class="li-item">
+                    <div class="product-img-name">
+                        <img referrerpolicy="no-referrer" src="${thumbnail}">
+                        <span class="img-li-description">${title} ${price} x ${qty} = ${qty * price}kr</span>
+                    </div>
+                    <div class="product-btns-li">
+                        <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
+                        <button class="add-one btn btn-secondary" data-id="${id}">+</button>
+                        <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
+                    </div>
+                </li>
                 `                
             }
             productList.innerHTML = productStr

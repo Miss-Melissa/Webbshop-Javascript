@@ -10,9 +10,9 @@ cartModalTemplate.innerHTML = `
                 <div class="product-qty">
                     <!-- total amount of products in cart -->
                 </div>
-                <div class="product-list">
+                <ul class="product-list">
                     <!-- cart products  -->
-                </div>
+                </ul>
                 <div class="cart-total">
                     <!-- cart total -->
                 </div>
@@ -116,7 +116,7 @@ class CartModal extends HTMLElement {
             productQty.innerHTML = `Du har ${getQty()} produkt(er) i din varukorg`
             let productStr = ""
             for (let i = 0; i < cart.length; i += 1) {
-                const { title, price, thumbnail, qty, id } = cart[i]
+                const {title, price, thumbnail, qty, id } = cart[i]
 
                 productStr += `
                 <li class="li-item">

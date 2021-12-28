@@ -71,7 +71,7 @@ function showProduct() {
     for (let i=0; i < cart.length; i+=1) {
         const {title, price, thumbnail, qty, id} = cart[i]
 
-        productStr += `<li><img src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
+        productStr += `<li><img referrerpolicy="no-referrer" src="${thumbnail}">${title} $${price} x ${qty} = $${qty * price} 
         <button class="remove" data-id="${id}">Remove</button>
         <button class="add-one" data-id="${id}">+</button>
         <button class="remove-one" data-id="${id}">-</button>

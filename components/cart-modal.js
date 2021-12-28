@@ -10,9 +10,9 @@ cartModalTemplate.innerHTML = `
                 <div class="product-qty">
                     <!-- total amount of products in cart -->
                 </div>
-                <ul class="product-list">
+                <div class="product-list">
                     <!-- cart products  -->
-                </ul>
+                </div>
                 <div class="cart-total">
                     <!-- cart total -->
                 </div>

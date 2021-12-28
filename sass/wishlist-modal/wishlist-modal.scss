@@ -14,6 +14,7 @@
     top: 0; // påverkar inget just nu så länge det inte är 0, då läggs den över knappen
     width: 100%;
     height: 100%;
+    overflow: auto;  // gör så att sidan förlängs om det finns massa innehåll.
     background-color: rgba(151, 143, 143, 0.5); // opacity 0.5
 }
 

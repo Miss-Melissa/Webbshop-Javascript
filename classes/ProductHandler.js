@@ -58,10 +58,6 @@ class ProductHandler {
 
     getRandom() {
         let randomNum = Math.floor(Math.random() * this.products.length);
-        console.log('current random number', randomNum);
-        console.log('List of used random numbers already used', this.randomList);
-        console.log('available product count', this.products.length);
-        console.log('Already used product count', this.randomList.length);
         if (this.randomList.indexOf(randomNum) === -1) {
             this.randomList.push(randomNum);
             return this.products[randomNum];

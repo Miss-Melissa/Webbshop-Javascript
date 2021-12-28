@@ -3,10 +3,12 @@
 //Om id inkluderar imgur splittras url länken vid com/ och hämtar array nummer 1, vilket blir ett id nummer.
 //Fetchar sedan url länken till imgur + id för att få vald bild. 
 //catch fångar upp möjliga errors och alertar isåfall dessa
+import Token from "./config.js"
+const token = new Token;
 class ImageAPI {
     constructor() {
         this.headers = new Headers();
-        this.headers.append('Authorization', 'Bearer c7d910b461a049e7584e987db40614a1268a480e');
+        this.headers.append('Authorization', token.token);
     }
     async getImage(id) {
         if(!id) return;

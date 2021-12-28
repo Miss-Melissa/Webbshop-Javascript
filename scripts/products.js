@@ -25,11 +25,3 @@ products.forEach(product => {
     document.querySelector('.products-container').appendChild(categoryProducts);
 });
 
-const filledHeart = document.querySelector('.bi-suit-heart-fill');
-const emptyHeart = document.querySelector('.bi-suit-heart');
-
-filledHeart.addEventListener("click", () => {
-
-})
-
-

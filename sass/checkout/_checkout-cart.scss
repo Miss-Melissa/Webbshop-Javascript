@@ -4,6 +4,7 @@
 
 .container-kundvagn {
   margin-top: 176px;
+
   .listItems {
     margin-left: -2.375rem;
   }
@@ -96,46 +97,77 @@
     display: contents;
   }
 
-  .list {
-    justify-content: space-between !important;
-    display: flex !important;
-    position: relative;
-    display: block;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: -1.06rem;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    .list {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-bottom: 0 solid whitesmoke;
+      padding: 20px;
+
+    .p-img {
+      width: 100%;
+    }
+
+    .p-text-group {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+
+      .p-title {
+        font-size: 1.3rem;
+      }
+    }
+
+    .p-btn-group {
+      width: 100%;
+
+      .btn {
+        font-size: 1.3rem;
+      }
+
+    }
   }
 
-  .list-2 {
-    justify-content: space-between !important;
-    display: flex !important;
-    position: relative;
-    display: block;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: -0.063rem;
-    background-color: #f8f9fa !important;
-    border: 0.063rem solid rgba(0, 0, 0, 0.125);
+    .list-2 {
+      justify-content: space-between !important;
+      display: flex !important;
+      position: relative;
+      display: block;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: -0.063rem;
+      background-color: #f8f9fa !important;
+      border: 0.063rem solid rgba(0, 0, 0, 0.125);
+    }
+
+    .total-list {
+      justify-content: space-between !important;
+      display: flex !important;
+      position: relative;
+      margin-top: -1rem;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: -0.063rem;
+      background-color: #fff;
+      border: 0.063rem solid rgba(0, 0, 0, 0.125);
+    }
   }
 
-  .total-list {
-    justify-content: space-between !important;
+  @media only screen and (max-width: $breakpoint-ipad) {
+    .list {
+      flex-wrap: wrap;
 
-    display: flex !important;
+      .p-title {
+        padding-bottom: 10px;
+      }
 
-    position: relative;
-
-    padding: 0.75rem 1.25rem;
-
-    margin-bottom: -0.063rem;
-
-    background-color: #fff;
-
-    border: 0.063rem solid rgba(0, 0, 0, 0.125);
+      .p-text-group {
+        display: flex;
+        flex-direction: column !important;
+        padding-bottom: 10px;
+      }
+    }
   }
-
-  .btn {
-    height: 3rem;
-    margin-top: 3rem;
-  }
-}

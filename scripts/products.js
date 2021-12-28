@@ -12,17 +12,24 @@ const categoryTextInfo = {
 };
 const urlCategory = url.searchParams.get('category') || "Skärmar";
 
-//Ritar ut produkter baserat på category i en url
+//Ritar ut produkter samt text baserat på category i en urladress
 const products = ph.getByCategory(urlCategory);
 document.querySelector(".categoryTitle").innerText = urlCategory;
 document.querySelector(".categoryText").innerText = categoryTextInfo[urlCategory];
 
-
+// Loopar igenom alla produkter i localstorage och ritar ut de i html baserat på kategori
 products.forEach(product => {
     if (!product.id) return;
     let categoryProducts = document.createElement("product-card");
     categoryProducts.data = product;
     document.querySelector('.products-container').appendChild(categoryProducts);
 });
+
+const filledHeart = document.querySelector('.bi-suit-heart-fill');
+const emptyHeart = document.querySelector('.bi-suit-heart');
+
+filledHeart.addEventListener("click", () => {
+
+})
 
 

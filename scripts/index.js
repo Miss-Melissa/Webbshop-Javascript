@@ -1,7 +1,7 @@
-import ProductHandler from "./classes/ProductHandler.js";
+import ProductHandler from "../classes/ProductHandler.js";
 
 const ph = new ProductHandler();
-
+console.log("index funkar")
 for(let i = 0; i < 4; i++){
     let productElem = document.createElement("product-card");
     productElem.data = ph.getRandom();

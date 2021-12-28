@@ -65,11 +65,18 @@ function showProduct() {
     for (let i = 0; i < cart.length; i += 1) {
         const { title, price, thumbnail, qty, id } = cart[i]
 
-        productStr += `<li class="list"><img referrerpolicy="no-referrer" src="${thumbnail}">${title} ${price}kr x ${qty} = ${qty * price}kr 
-        <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
-        <button class="add-one btn btn-secondary" data-id="${id}">+</button>
-        <button class="remove btn btn-danger" data-id="${id}">Remove</button>
-        </li>`
+        productStr += `<div class="list">
+        <div class="p-img"><img referrerpolicy="no-referrer" src="${thumbnail}"></div>
+        <div class="p-text-group">
+            <div class="p-title">${title}</div>
+            <div>Antal: ${qty}</div>  
+            <div>${qty * price} kr</div>
+        </div> 
+        <div class="p-btn-group">
+            <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
+            <button class="add-one btn btn-secondary" data-id="${id}">+</button>
+            <button class="remove btn btn-danger" data-id="${id}">Remove</button></div>
+        </div>`
     }
     productList.innerHTML = productStr
     cartTotal.innerHTML = `${getTotal()}kr`
@@ -212,7 +219,7 @@ document.querySelector('.btn2').addEventListener('click', discountButton);
 const discount = document.querySelector('#discountInput');
 
 function discountButton() {
-    alert("Fyll i en GILLTIG Rabbatkod!!! 🤪🤪🤪")
+    alert("Fyll i en GILTIG Rabattkod!!! 🤪🤪🤪")
 
     Object.keys(discount).forEach(key => {
 

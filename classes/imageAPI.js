@@ -6,7 +6,7 @@
 class ImageAPI {
     constructor() {
         this.headers = new Headers();
-        this.headers.append('Authorization', 'Bearer 5f744407af8cdca8deec51fba732f2660b175351');
+        this.headers.append('Authorization', 'Bearer c7d910b461a049e7584e987db40614a1268a480e');
     }
     async getImage(id) {
         if(!id) return;

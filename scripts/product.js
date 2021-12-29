@@ -2,6 +2,7 @@
 
 import ProductHandler from '../classes/ProductHandler.js'; //var tvungen att lägga in type="module" i script-taggen
 
+//Immediately invoked function expression
 (()=>{
 //i HTMl annars funkade inte detta
 const ph = new ProductHandler();
@@ -90,7 +91,7 @@ function addToWishlistModal(id) {
 
     setWishlistLocalStorage(wishlist)
 }
-
+//Function for add product to cart
 function addToCartModal(id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     for(let i=0; i < cart.length; i+=1) {

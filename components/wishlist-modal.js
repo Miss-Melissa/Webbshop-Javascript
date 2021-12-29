@@ -1,3 +1,4 @@
+//Skapar wishlist modal Htmlstrucutre med DOMmanipulering
 const wishlistModalTemplate = document.createElement('template');
 wishlistModalTemplate.innerHTML = `
 <div class="wishlist-modal">
@@ -25,6 +26,7 @@ wishlistModalTemplate.innerHTML = `
     </div>
 </div>`;
 
+//Skapar klassen WishlistModal
 class WishlistModal extends HTMLElement {
     constructor() {
         super();
@@ -62,23 +64,13 @@ class WishlistModal extends HTMLElement {
             }
         }
 
+        //Selectors
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const wishlistTotal = document.querySelector(".wishlist-total")
         const addAllToCart = document.querySelector(".add-all-to-cart")
         const cart = JSON.parse(localStorage.getItem("cart")) || []
         const wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
-
-        //////////////// TA BORT OM ALLT FUNGERAR /////////////////////////
-        /*
-        function getWishlistLocalStorage () {
-            let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-            return wishlist.map(i => {
-                i.product = ph.getByID(i.id)
-                return i
-            })
-        }
-        */
 
         // --------------------------------------------------------------------
         // setItem cart to local storage
@@ -160,6 +152,7 @@ class WishlistModal extends HTMLElement {
         function showProduct() {
             productQty.innerHTML = `Du har ${getQty()} produkt(er) i din wishlist`
             let productStr = ""
+            //For varje produkt som läggs till i wishlist, skapa nedan htmlstruktur
             for (let i = 0; i < wishlist.length; i += 1) {
                 let { title, price, thumbnail, qty, id } = wishlist[i]
 
@@ -179,10 +172,7 @@ class WishlistModal extends HTMLElement {
             productList.innerHTML = productStr
             wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
         }
-        //TOG BORT, EJ RELEVANT FÖR WISHLIST
-        /*<button class="add-one" data-id="${id}">+</button>
-        <button class="remove-one" data-id="${id}">-</button> */
-
+        
         // --------------------------------------------------------------------
         // GET QTY
         function getQty() {

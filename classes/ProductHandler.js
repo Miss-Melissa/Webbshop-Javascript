@@ -33,7 +33,7 @@ class ProductHandler {
         window.location.reload();
     }
 
-    /* updateProduct(updatedProduct) {
+    updateProduct(updatedProduct) {
         let currentProduct = this.getByID(updatedProduct.id);
 
         Object.keys(currentProduct).forEach(key => {
@@ -50,7 +50,7 @@ class ProductHandler {
         this.products.splice(index, 1);
         this.saveData();
         window.location.reload();
-    } */
+    }
 
     getByID(id) {
         return this.products.find(product => product.id === id);
@@ -59,10 +59,6 @@ class ProductHandler {
     getByCategory(category) {
         return this.products.filter(product => product.category === category);
     }
-
-    /* getByPriceRange(minPrice, maxPrice) {
-        return this.products.filter(product => product.price >= minPrice && product.price <= maxPrice);
-    } */
 
     getRandom() {
         let randomNum = Math.floor(Math.random() * this.products.length);

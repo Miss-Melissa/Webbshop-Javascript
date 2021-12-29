@@ -33,9 +33,9 @@ class ProductHandler {
     }
 
     //tillåter att ta bort produkter i admin sidan
-    deleteProduct(productId){
+    deleteProduct(productId) {
         let index = this.products.findIndex(p => p.id === productId);
-        if(index == -1) return;
+        if (index == -1) return;
         this.products.splice(index, 1);
         this.saveData();
         window.location.reload();

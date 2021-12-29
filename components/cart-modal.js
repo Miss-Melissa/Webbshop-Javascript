@@ -119,8 +119,8 @@ class CartModal extends HTMLElement {
             let productStr = ""
             //Produktinnehållet i cart (per produkt)
             for (let i = 0; i < cart.length; i += 1) {
-                const {title, price, thumbnail, qty, id } = cart[i]
-                
+                const { title, price, thumbnail, qty, id } = cart[i]
+
                 productStr += `
                 <li class="li-item">
                     <div class="product-img-name">
@@ -133,7 +133,7 @@ class CartModal extends HTMLElement {
                         <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
                     </div>
                 </li>
-                `                
+                `
             }
             productList.innerHTML = productStr
             cartTotal.innerHTML = `Summa: ${getTotal()}kr`

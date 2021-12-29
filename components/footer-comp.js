@@ -93,11 +93,11 @@ footerTemplate.innerHTML = `
 `
 
 class Footer extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.appendChild(footerTemplate.content.cloneNode(true));
-    }
+    this.appendChild(footerTemplate.content.cloneNode(true));
+  }
 }
 //definerar vad html elemetet ska heta för att kunna använda i html
 customElements.define('footer-comp', Footer);

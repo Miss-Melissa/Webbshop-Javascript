@@ -5,12 +5,12 @@ class Product extends HTMLElement {
 
     }
     connectedCallback() {
-        
+
         if (!this.data) return this.innerHTML = '<div style="text-align: center; width:100%">Missing Data</div>';
 
         let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         let wishlistProdIndex = wishlist.findIndex(i => i.id === this.data.id);
-        
+
         let productTitle = document.createElement("div");
         productTitle.className = "product-title";
         productTitle.innerText = this.data.title;
@@ -24,7 +24,7 @@ class Product extends HTMLElement {
             if (e.target.className === "bi bi-suit-heart-fill") {
                 wishlist.push(this.data);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            }else{
+            } else {
                 wishlistProdIndex = wishlist.findIndex(i => i.id === this.data.id);
                 wishlist.splice(wishlistProdIndex, 1);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));

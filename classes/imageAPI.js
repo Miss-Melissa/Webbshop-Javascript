@@ -11,13 +11,13 @@ class ImageAPI {
         this.headers.append('Authorization', token.token);
     }
     async getImage(id) {
-        if(!id) return;
+        if (!id) return;
         id = id.includes("imgur") ? id.split("com/")[1] : id;
         return await fetch('https://api.imgur.com/3/account/wie21sGrupp4/image/' + id, {
             method: 'GET',
             headers: this.headers
         }).then(response => response.json())
-        .catch(err => alert(err));
+            .catch(err => alert(err));
     }
 }
 

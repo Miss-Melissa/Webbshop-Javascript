@@ -170,27 +170,7 @@ class WishlistModal extends HTMLElement {
                 `
             }
             productList.innerHTML = productStr
-           // wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
-        }
-        
-        // --------------------------------------------------------------------
-        // GET QTY
-        function getQty() {
-            let qty = 0
-            for (let i = 0; i < wishlist.length; i += 1) {
-                qty += wishlist[i].qty
-            }
-            return qty
-        }
-
-        // --------------------------------------------------------------------
-        // GET TOTAL
-        function getTotal() {
-            let total = 0
-            for (let i = 0; i < wishlist.length; i += 1) {
-                total += wishlist[i].price * wishlist[i].qty
-            }
-            return total.toFixed(2)
+            // wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
         }
 
         // --------------------------------------------------------------------

@@ -35,7 +35,7 @@ class NavBar extends HTMLElement {
     super();
 
     this.appendChild(navbarTemplate.content.cloneNode(true));
-     
+
     this.querySelector('.nav-burger').addEventListener('click', (e) => {
       let navBot = this.querySelector('.nav-bot');
       navBot.style.display = navBot.style.display ? '' : 'block';
@@ -43,16 +43,16 @@ class NavBar extends HTMLElement {
 
     const url = new URL(location.href);
     const productCategory = url.searchParams.get('category');
-    if(productCategory){
+    if (productCategory) {
       let activeElement = this.querySelector(`a[category="${productCategory}"]`);
 
-      if(activeElement)
+      if (activeElement)
         activeElement.className += " link-active";
     }
-    
+
   }
 
-  connectedCallback(){
+  connectedCallback() {
     const openCart = new Event('open-cart');
     const openWishlist = new Event('open-wishlist');
 
@@ -61,7 +61,7 @@ class NavBar extends HTMLElement {
     });
 
     this.querySelector('#nav-wishlist-btn').addEventListener('click', () => {
-      
+
       document.dispatchEvent(openWishlist);
     });
   }

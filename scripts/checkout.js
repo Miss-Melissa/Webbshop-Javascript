@@ -17,6 +17,8 @@ const payWithCart = {
     cardCvv: document.getElementById('cc-cvv')
 }
 
+// -------------------------------------------------------------------- 
+// HTML ELEMENT REFERENCE VARIABLES
 const productList = document.querySelector("#product-list")
 const productQty = document.querySelector("#product-qty")
 const cartTotal = document.querySelector("#cart-total")
@@ -24,7 +26,7 @@ const cartTotal = document.querySelector("#cart-total")
 const cart = JSON.parse(localStorage.getItem("cart")) || []
 
 // --------------------------------------------------------------------
-// setItem cart to local storage
+// SETITEM CART TO LOCAL STORAGE
 function setCartLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }

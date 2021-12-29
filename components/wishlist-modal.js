@@ -62,6 +62,8 @@ class WishlistModal extends HTMLElement {
             }
         }
 
+        // -------------------------------------------------------------------- 
+        // HTML ELEMENT REFERENCE VARIABLES
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const wishlistTotal = document.querySelector(".wishlist-total")

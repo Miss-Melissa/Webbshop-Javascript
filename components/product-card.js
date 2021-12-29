@@ -23,12 +23,10 @@ class Product extends HTMLElement {
             if (e.target.className === "bi bi-suit-heart-fill") {
                 wishlist.push(this.data);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                window.location.reload();
             }else{
                 wishlistProdIndex = wishlist.findIndex(i => i.id === this.data.id);
                 wishlist.splice(wishlistProdIndex, 1);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                window.location.reload();
             }
 
         });

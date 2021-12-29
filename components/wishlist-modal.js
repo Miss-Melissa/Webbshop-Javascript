@@ -167,7 +167,7 @@ class WishlistModal extends HTMLElement {
                 <li class="li-item">
                     <div class="product-img-name">
                         <img class="product-img-name" referrerpolicy="no-referrer" src="${thumbnail}"/>
-                        <span class="img-li-description">${title} ${price} x ${qty} = $${qty * price}kr</span>
+                        <span class="img-li-description">${title} - ${price}kr</span>
                     </div> 
                     <div class="wishlist-btns-li">
                         <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>

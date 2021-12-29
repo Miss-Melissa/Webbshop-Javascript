@@ -1,3 +1,4 @@
+//Creating cart-modal html structure through DOM Manipulation
 const cartModalTemplate = document.createElement('template');
 cartModalTemplate.innerHTML = `
 <div class="varukorg-modal">
@@ -26,7 +27,7 @@ cartModalTemplate.innerHTML = `
     </div>
 `;
 
-
+//Skapar class CartModal
 class CartModal extends HTMLElement {
     constructor() {
         super();
@@ -60,8 +61,12 @@ class CartModal extends HTMLElement {
                 closeVarukorg();
         };
 
+<<<<<<< HEAD
         // -------------------------------------------------------------------- 
         // HTML ELEMENT REFERENCE VARIABLES
+=======
+        //selectors
+>>>>>>> 81d76a02591d05e1a16445c7a6ef625323e63abe
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const cartTotal = document.querySelector(".cart-total")
@@ -117,9 +122,10 @@ class CartModal extends HTMLElement {
         function showProduct() {
             productQty.innerHTML = `Du har ${getQty()} produkt(er) i din varukorg`
             let productStr = ""
+            //Produktinnehållet i cart (per produkt)
             for (let i = 0; i < cart.length; i += 1) {
                 const {title, price, thumbnail, qty, id } = cart[i]
-
+                
                 productStr += `
                 <li class="li-item">
                     <div class="product-img-name">

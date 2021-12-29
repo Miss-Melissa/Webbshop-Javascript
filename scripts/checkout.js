@@ -1,5 +1,8 @@
+// hämtar knappen
 document.querySelector('#btnPay').addEventListener('click', payFunction);
 
+// --------------------------------------------------------------------
+// hämtar alla inputfält costumerinfo
 const shopperInfo = {
     mail: document.getElementById('mailInput'),
     firstName: document.getElementById('namnInput'),
@@ -10,12 +13,16 @@ const shopperInfo = {
     phoneNumber: document.getElementById('phoneInput')
 }
 
+// --------------------------------------------------------------------
+// hämtar alla inputfält payment
 const payWithCart = {
     cardName: document.getElementById('cc-name'),
     cardNumber: document.getElementById('cc-number'),
     cardexpire: document.getElementById('cc-expiration'),
     cardCvv: document.getElementById('cc-cvv')
 }
+// --------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------- 
 // HTML ELEMENT REFERENCE VARIABLES
@@ -123,9 +130,15 @@ function removeProduct(id, qty = 0) {
 
 showProduct()
 
+
+// --------------------------------------------------------------------
+// funktionen till slutför köp knappen
 function payFunction(e) {
     e.preventDefault();
 
+
+    // --------------------------------------------------------------------
+    // hämtar value från input fälten
     let mail = document.getElementById('mailInput').value
     let firstName = document.getElementById('namnInput').value
     let lastName = document.getElementById('lastnameInput').value
@@ -134,15 +147,26 @@ function payFunction(e) {
     let postOrt = document.getElementById('postortInput').value
     let phoneNumber = document.getElementById('phoneInput').value
 
+
+    // --------------------------------------------------------------------
+    // hämtar diven där value ska skrivas ut på
     const div = document.querySelector("#kundinfo");
 
+    // --------------------------------------------------------------------
+    // skriver ut value till diven som ligger i modalen
     div.innerHTML += `<li>Email: ${mail} <br> Telefonnummer: ${phoneNumber} <br> 
 ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     div.style.listStyleType = "none";
 
+
+    // --------------------------------------------------------------------
+    // hämtar alla checkbox leverans 
     const a = document.getElementById("postnord")
     const b = document.getElementById("homedelivery")
     const c = document.getElementById("instabox")
+
+    // --------------------------------------------------------------------
+    // om checkbox är checked hämtar value som ska stå i modalen
 
     if (a.checked == true) {
         let a = document.getElementById("postnord").value
@@ -154,8 +178,8 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         let c = document.getElementById("instabox").value
         document.querySelector("#leveransinfo").innerHTML = c;
     }
-
-
+    // --------------------------------------------------------------------
+    // om checkbox payment är checked skriv ut value i modalen
     const d = document.getElementById("credit")
 
     if (d.checked == true) {
@@ -163,7 +187,9 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         document.querySelector("#betalinfo").innerHTML = d;
     }
 
+    // --------------------------------------------------------------------
     // om input inte fylls i funkar inte knappen (Dina uppgifter)
+    // och det kommer en alert som förklarar vilket input som måste fyllas i
     if (!shopperInfo.mail.value) return alert("DU MÅSTE FYLLA I MAILADRESS");
     if (!shopperInfo.firstName.value) return alert("DU MÅSTE FYLLA I FÖRNAMN");
     if (!shopperInfo.lastName.value) return alert("DU MÅSTE FYLLA I EFTERNAMN");
@@ -171,28 +197,33 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     if (!shopperInfo.postCode.value) return alert("DU MÅSTE FYLLA I POSTKOD");
     if (!shopperInfo.postOrt.value) return alert("DU MÅSTE FYLLA I POSTORT");
 
+    // --------------------------------------------------------------------
     // om input inte fylls i funkar inte knappen (Betalning)
+    // och det kommer en alert som förklarar vilket input som måste fyllas i
     if (!payWithCart.cardName.value) return alert("DU MÅSTE FYLLA I KORTNAMN");
     if (!payWithCart.cardNumber.value) return alert("DU MÅSTE FYLLA I KORTNUMMER");
     if (!payWithCart.cardexpire.value) return alert("DU MÅSTE FYLLA I UTGÅNGSDATUM");
     if (!payWithCart.cardCvv.value) return alert("DU MÅSTE FYLLA I CVV");
 
-
-
+    // --------------------------------------------------------------------
     // hämta modal
     const modal = document.getElementById("myModal");
 
+    // --------------------------------------------------------------------
     // hämta kryss knapp
     const span = document.getElementsByClassName("close")[0];
 
+    // --------------------------------------------------------------------
     // När användare trycker på myBtn, öppna Modal
     modal.style.display = "block";
 
+    // --------------------------------------------------------------------
     // När användare trycker på <span> (x), stäng Modal
     span.onclick = function () {
         modal.style.display = "none";
     }
 
+    // --------------------------------------------------------------------
     // När användare trycker utanför Modal, stäng Modal
     window.onclick = function (event) {
         if (event.target == modal) {
@@ -200,13 +231,14 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         }
     }
 
-
+    // --------------------------------------------------------------------
     // tömmer input fälten efter click (betalning)
     Object.keys(payWithCart).forEach(key => {
 
         payWithCart[key].value = "";
     });
 
+    // --------------------------------------------------------------------
     // tömmer input fälten efter click (dina uppgifter)
     Object.keys(shopperInfo).forEach(key => {
 
@@ -214,7 +246,7 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     });
 }
 
-
+// --------------------------------------------------------------------
 // discoun button lagt till en alert och att inputfältet blir tom efter man tryckt på knappen
 document.querySelector('.btn2').addEventListener('click', discountButton);
 
@@ -231,8 +263,9 @@ function discountButton() {
 }
 
 
-
-// checkbox leverans och betalning
+// --------------------------------------------------------------------
+// checkbox leverans
+// om checkbox checked visar info
 function myCheckBox() {
 
     const checkBoxDelivery = document.getElementById("postnord");
@@ -262,6 +295,9 @@ function myCheckBox() {
         text.style.display = "none";
     }
 
+    // --------------------------------------------------------------------
+    // checkbox betalning
+    // om checkbox checked visar info
     const checkBoxVisaCard = document.getElementById("credit");
     var text = document.getElementById("textvisacard");
 

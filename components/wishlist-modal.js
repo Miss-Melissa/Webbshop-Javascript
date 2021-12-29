@@ -1,3 +1,4 @@
+//Skapar wishlist modal Htmlstrucutre med DOMmanipulering
 const wishlistModalTemplate = document.createElement('template');
 wishlistModalTemplate.innerHTML = `
 <div class="wishlist-modal">
@@ -25,6 +26,7 @@ wishlistModalTemplate.innerHTML = `
     </div>
 </div>`;
 
+//Skapar klassen WishlistModal
 class WishlistModal extends HTMLElement {
     constructor() {
         super();
@@ -62,8 +64,12 @@ class WishlistModal extends HTMLElement {
             }
         }
 
+<<<<<<< HEAD
         // -------------------------------------------------------------------- 
         // HTML ELEMENT REFERENCE VARIABLES
+=======
+        //Selectors
+>>>>>>> 81d76a02591d05e1a16445c7a6ef625323e63abe
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const wishlistTotal = document.querySelector(".wishlist-total")
@@ -151,6 +157,7 @@ class WishlistModal extends HTMLElement {
         function showProduct() {
             productQty.innerHTML = `Du har ${getQty()} produkt(er) i din wishlist`
             let productStr = ""
+            //For varje produkt som läggs till i wishlist, skapa nedan htmlstruktur
             for (let i = 0; i < wishlist.length; i += 1) {
                 let { title, price, thumbnail, qty, id } = wishlist[i]
 
@@ -158,7 +165,7 @@ class WishlistModal extends HTMLElement {
                 <li class="li-item">
                     <div class="product-img-name">
                         <img class="product-img-name" referrerpolicy="no-referrer" src="${thumbnail}"/>
-                        <span class="img-li-description">${title} ${price} x ${qty} = $${qty * price}kr</span>
+                        <span class="img-li-description">${title} - ${price}kr</span>
                     </div> 
                     <div class="wishlist-btns-li">
                         <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>

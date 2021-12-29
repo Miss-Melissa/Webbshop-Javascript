@@ -1,3 +1,4 @@
+//Skapar wishlist modal Htmlstrucutre med DOMmanipulering
 const wishlistModalTemplate = document.createElement('template');
 wishlistModalTemplate.innerHTML = `
 <div class="wishlist-modal">
@@ -25,6 +26,7 @@ wishlistModalTemplate.innerHTML = `
     </div>
 </div>`;
 
+//Skapar klassen WishlistModal
 class WishlistModal extends HTMLElement {
     constructor() {
         super();
@@ -62,6 +64,7 @@ class WishlistModal extends HTMLElement {
             }
         }
 
+        //Selectors
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const wishlistTotal = document.querySelector(".wishlist-total")
@@ -149,6 +152,7 @@ class WishlistModal extends HTMLElement {
         function showProduct() {
             productQty.innerHTML = `Du har ${getQty()} produkt(er) i din wishlist`
             let productStr = ""
+            //For varje produkt som läggs till i wishlist, skapa nedan htmlstruktur
             for (let i = 0; i < wishlist.length; i += 1) {
                 let { title, price, thumbnail, qty, id } = wishlist[i]
 

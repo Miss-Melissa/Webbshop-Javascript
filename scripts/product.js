@@ -2,6 +2,7 @@
 
 import ProductHandler from '../classes/ProductHandler.js'; //var tvungen att lägga in type="module" i script-taggen
 
+//Immediately invoked function expression
 (()=>{
 //i HTMl annars funkade inte detta
 const ph = new ProductHandler();

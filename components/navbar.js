@@ -60,6 +60,7 @@ class NavBar extends HTMLElement {
     });
 
     this.querySelector('#nav-wishlist-btn').addEventListener('click', () => {
+      
       document.dispatchEvent(openWishlist);
     });
   }

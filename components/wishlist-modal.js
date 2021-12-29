@@ -46,7 +46,7 @@ class WishlistModal extends HTMLElement {
 
         //funktion för att öppna varukorgsmodal
         function openWishlist() {
-            console.log('OPEN WISHLIST')
+            console.log('OPEN WISHLIST');
             modal.style.display = "block";
         }
 

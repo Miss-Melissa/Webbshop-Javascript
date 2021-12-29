@@ -64,12 +64,7 @@ class WishlistModal extends HTMLElement {
             }
         }
 
-<<<<<<< HEAD
-        // -------------------------------------------------------------------- 
-        // HTML ELEMENT REFERENCE VARIABLES
-=======
         //Selectors
->>>>>>> 81d76a02591d05e1a16445c7a6ef625323e63abe
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const wishlistTotal = document.querySelector(".wishlist-total")
@@ -155,17 +150,17 @@ class WishlistModal extends HTMLElement {
         // --------------------------------------------------------------------
         // SHOW PRODUCT
         function showProduct() {
-            productQty.innerHTML = `Du har ${getQty()} produkt(er) i din wishlist`
+            productQty.innerHTML = `Här hittar du dina markerade favoriter`
             let productStr = ""
             //For varje produkt som läggs till i wishlist, skapa nedan htmlstruktur
             for (let i = 0; i < wishlist.length; i += 1) {
-                let { title, price, thumbnail, qty, id } = wishlist[i]
+                let { title, price, thumbnail, id } = wishlist[i]
 
                 productStr += `
                 <li class="li-item">
                     <div class="product-img-name">
                         <img class="product-img-name" referrerpolicy="no-referrer" src="${thumbnail}"/>
-                        <span class="img-li-description">${title} - ${price}kr</span>
+                        <span class="img-li-description">${title} - ${price} kr</span>
                     </div> 
                     <div class="wishlist-btns-li">
                         <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>
@@ -175,7 +170,7 @@ class WishlistModal extends HTMLElement {
                 `
             }
             productList.innerHTML = productStr
-            wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
+           // wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
         }
         
         // --------------------------------------------------------------------

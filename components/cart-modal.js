@@ -61,12 +61,7 @@ class CartModal extends HTMLElement {
                 closeVarukorg();
         };
 
-<<<<<<< HEAD
-        // -------------------------------------------------------------------- 
-        // HTML ELEMENT REFERENCE VARIABLES
-=======
         //selectors
->>>>>>> 81d76a02591d05e1a16445c7a6ef625323e63abe
         const productList = document.querySelector(".product-list")
         const productQty = document.querySelector(".product-qty")
         const cartTotal = document.querySelector(".cart-total")

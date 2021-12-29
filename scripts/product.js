@@ -90,7 +90,7 @@ function addToWishlistModal(id) {
 
     setWishlistLocalStorage(wishlist)
 }
-
+//Function for add product to cart
 function addToCartModal(id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     for(let i=0; i < cart.length; i+=1) {

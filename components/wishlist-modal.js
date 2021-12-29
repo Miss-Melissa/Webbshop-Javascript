@@ -69,17 +69,6 @@ class WishlistModal extends HTMLElement {
         const cart = JSON.parse(localStorage.getItem("cart")) || []
         const wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
 
-        //////////////// TA BORT OM ALLT FUNGERAR /////////////////////////
-        /*
-        function getWishlistLocalStorage () {
-            let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-            return wishlist.map(i => {
-                i.product = ph.getByID(i.id)
-                return i
-            })
-        }
-        */
-
         // --------------------------------------------------------------------
         // setItem cart to local storage
         function setCartLocalStorage() {
@@ -179,10 +168,7 @@ class WishlistModal extends HTMLElement {
             productList.innerHTML = productStr
             wishlistTotal.innerHTML = `Wishlist total: ${getTotal()}kr`
         }
-        //TOG BORT, EJ RELEVANT FÖR WISHLIST
-        /*<button class="add-one" data-id="${id}">+</button>
-        <button class="remove-one" data-id="${id}">-</button> */
-
+        
         // --------------------------------------------------------------------
         // GET QTY
         function getQty() {

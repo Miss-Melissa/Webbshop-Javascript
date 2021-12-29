@@ -1,4 +1,4 @@
-//Skapar wishlist modal Htmlstrucutre med DOMmanipulering
+//Skapar template med html 
 const wishlistModalTemplate = document.createElement('template');
 wishlistModalTemplate.innerHTML = `
 <div class="wishlist-modal">
@@ -220,4 +220,5 @@ class WishlistModal extends HTMLElement {
 
     }
 }
+//definerar vad html elemetet ska heta för att kunna använda i html
 customElements.define('wishlist-modal', WishlistModal);

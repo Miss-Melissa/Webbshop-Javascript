@@ -125,7 +125,7 @@ document.querySelector('#retrieve-img-btn').addEventListener('click', (e) => {
 
 })
 
-
+//funktion som rendrerar ut produkter i en table 
 function renderEditList() {
     let tBody = document.querySelector('table > tbody');
 
@@ -145,6 +145,7 @@ function renderEditList() {
             </tr>
         `;
 
+        //funktioner i min tabell, målar upp och sätter egenskaper för produkter i tabellen
         let tr = template.content.cloneNode(true);
 
         tr.querySelector(".btn-primary").addEventListener('click', e => {

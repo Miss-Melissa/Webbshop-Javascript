@@ -1,3 +1,4 @@
+//Skapar template med html 
 class Product extends HTMLElement {
     constructor() {
         super();
@@ -59,5 +60,5 @@ class Product extends HTMLElement {
         });
     };
 }
-
+//definerar vad html elemetet ska heta för att kunna använda i html
 customElements.define('product-card', Product);

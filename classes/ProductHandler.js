@@ -20,19 +20,7 @@ class ProductHandler {
         window.location.reload();
     }
 
-    addToWishlist(wishProduct) {
-        this.wishlist.push(wishProduct);
-        this.saveData();
-    }
-
-    removeFromWishlist(productId){
-        let index = this.wishlist.findIndex(p => p.id === productId);
-        if(index == -1) return;
-        this.wishlist.splice(index, 1);
-        this.saveData();
-        window.location.reload();
-    }
-
+    //tillåter att editera produkter i admin sidan
     updateProduct(updatedProduct) {
         let currentProduct = this.getByID(updatedProduct.id);
 
@@ -44,6 +32,7 @@ class ProductHandler {
         window.location.reload();
     }
 
+    //tillåter att ta bort produkter i admin sidan
     deleteProduct(productId){
         let index = this.products.findIndex(p => p.id === productId);
         if(index == -1) return;
@@ -52,14 +41,17 @@ class ProductHandler {
         window.location.reload();
     }
 
+    //Hämtar produkter baserat på dess id
     getByID(id) {
         return this.products.find(product => product.id === id);
     }
 
+    //Hämtar produkter baserat på produkters kategori
     getByCategory(category) {
         return this.products.filter(product => product.category === category);
     }
 
+    //Hämtar produkter random för att få variation på första sidan
     getRandom() {
         let randomNum = Math.floor(Math.random() * this.products.length);
         if (this.randomList.indexOf(randomNum) === -1) {

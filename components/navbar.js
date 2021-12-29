@@ -1,3 +1,4 @@
+//Skapar template med html 
 const navbarTemplate = document.createElement("template");
 
 navbarTemplate.innerHTML = `
@@ -66,5 +67,5 @@ class NavBar extends HTMLElement {
   }
 }
 
-//'nav-bar' blir html elementet, i exempelSida.html ska det alltså stå <nav-bar></nav-bar>
+//definerar vad html elemetet ska heta för att kunna använda i html
 customElements.define('nav-bar', NavBar);

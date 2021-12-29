@@ -1,4 +1,4 @@
-//Creating cart-modal html structure through DOM Manipulation
+//Skapar template med html 
 const cartModalTemplate = document.createElement('template');
 cartModalTemplate.innerHTML = `
 <div class="varukorg-modal">
@@ -185,4 +185,5 @@ class CartModal extends HTMLElement {
 
     }
 }
+//definerar vad html elemetet ska heta för att kunna använda i html
 customElements.define('cart-modal', CartModal);

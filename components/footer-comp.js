@@ -1,3 +1,4 @@
+//Skapar template med html 
 const footerTemplate = document.createElement("template");
 
 footerTemplate.innerHTML = `
@@ -98,6 +99,6 @@ class Footer extends HTMLElement {
         this.appendChild(footerTemplate.content.cloneNode(true));
     }
 }
-
+//definerar vad html elemetet ska heta för att kunna använda i html
 customElements.define('footer-comp', Footer);
 

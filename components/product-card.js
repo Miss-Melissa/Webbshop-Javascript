@@ -4,16 +4,33 @@ class Product extends HTMLElement {
 
     }
     connectedCallback() {
-        if(!this.data) return this.innerHTML = '<div style="text-align: center; width:100%">Missing Data</div>';
+        
+        if (!this.data) return this.innerHTML = '<div style="text-align: center; width:100%">Missing Data</div>';
 
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        let wishlistProdIndex = wishlist.findIndex(i => i.id === this.data.id);
+        
         let productTitle = document.createElement("div");
         productTitle.className = "product-title";
         productTitle.innerText = this.data.title;
 
         let wishlistBtn = document.createElement("div");
-        wishlistBtn.className = "bi bi-suit-heart";
+        wishlistBtn.className = (wishlistProdIndex > -1) ? "bi bi-suit-heart-fill" : "bi bi-suit-heart";
+
         wishlistBtn.addEventListener("click", (e) => {
+            wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
             e.target.className = (e.target.className === "bi bi-suit-heart") ? "bi bi-suit-heart-fill" : "bi bi-suit-heart";
+            if (e.target.className === "bi bi-suit-heart-fill") {
+                wishlist.push(this.data);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                window.location.reload();
+            }else{
+                wishlistProdIndex = wishlist.findIndex(i => i.id === this.data.id);
+                wishlist.splice(wishlistProdIndex, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                window.location.reload();
+            }
+
         });
 
         let productImg = document.createElement("img");
@@ -37,7 +54,7 @@ class Product extends HTMLElement {
         this.appendChild(productShortDescription);
 
         this.addEventListener('click', e => {
-            if(e.target.className.includes('bi')) return;
+            if (e.target.className.includes('bi')) return;
 
             let url = `/product.html?id=${this.data.id}`;
             window.location.href = url;

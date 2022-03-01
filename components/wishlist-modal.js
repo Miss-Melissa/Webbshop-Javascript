@@ -163,8 +163,8 @@ class WishlistModal extends HTMLElement {
                         <span class="img-li-description">${title} - ${price} kr</span>
                     </div> 
                     <div class="wishlist-btns-li">
-                        <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg till i varukorg</button>
-                        <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
+                        <button class="add-to-cart btn btn-primary" type="submit" data-id="${id}">Lägg Till</button>
+                        <button class="remove btn btn-danger" data-id="${id}"><span class="close">&times;</span></button>
                     </div>
                 </li>
                 `

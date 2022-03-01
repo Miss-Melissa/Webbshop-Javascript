@@ -78,8 +78,8 @@ function showProduct() {
         <div class="p-img"><img referrerpolicy="no-referrer" src="${thumbnail}"></div>
         <div class="p-text-group">
             <div class="p-title">${title}</div>
-            <div>Antal: ${qty}</div>  
-            <div>${qty * price} kr</div>
+            <div>Antal: ${qty}st</div>  
+            <div>Pris: ${qty * price}kr</div>
         </div> 
         <div class="p-btn-group">
             <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
@@ -186,7 +186,7 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
         let d = document.getElementById("credit").value
         document.querySelector("#betalinfo").innerHTML = d;
     }
-
+/*
     // --------------------------------------------------------------------
     // om input inte fylls i funkar inte knappen (Dina uppgifter)
     // och det kommer en alert som förklarar vilket input som måste fyllas i
@@ -204,7 +204,7 @@ ${firstName} ${lastName} <br> ${adress} <br> ${postCode} ${postOrt}</li>`
     if (!payWithCart.cardNumber.value) return alert("DU MÅSTE FYLLA I KORTNUMMER");
     if (!payWithCart.cardexpire.value) return alert("DU MÅSTE FYLLA I UTGÅNGSDATUM");
     if (!payWithCart.cardCvv.value) return alert("DU MÅSTE FYLLA I CVV");
-
+*/
     // --------------------------------------------------------------------
     // hämta modal
     const modal = document.getElementById("myModal");

@@ -5,7 +5,8 @@ navbarTemplate.innerHTML = `
 <nav>
   <div class="nav-top">
     <div class="nav-container">
-      <a class="nav-link home-logo" href="/"><img width="50" src="./Bilder/wie2-svg.svg"><span>WIE GAMING</span></a>
+      <a class="nav-link home-logo" href="/"><img width="100" src="./Bilder/Mooon.png">
+      <span class="LOGO">Beauty Store</span></a>
       <span>
         <a id="nav-wishlist-btn" class="nav-link" href="#"><i class="bi bi-suit-heart-fill"></i></a>
         <a id="nav-cart-btn" class="nav-link" href="#"><i class="bi bi-cart3"></i></a>
@@ -16,13 +17,13 @@ navbarTemplate.innerHTML = `
 
   <div class="nav-bot">
     <div class="nav-container">
-      <a class="nav-link" category="Skärmar" href="products.html?category=Skärmar">SKÄRMAR</a>
-      <a class="nav-link" category="Tangentbord" href="products.html?category=Tangentbord">TANGENTBORD</a>
-      <a class="nav-link" category="Möss" href="products.html?category=Möss">MÖSS</a>
-      <a class="nav-link" category="Konsoler" href="products.html?category=Konsoler">KONSOLER</a>
-      <a class="nav-link" category="Gamingstolar" href="products.html?category=Gamingstolar">GAMINGSTOLAR</a>
-      <a class="nav-link" category="Musmattor" href="products.html?category=Musmattor">MUSMATTOR</a>
-      <a class="nav-link" category="Hörlurar" href="products.html?category=Hörlurar">HÖRLURAR</a>
+    <a class="nav-link" category="Foundation" href="products.html?category=Foundation">FOUNDATION</a>
+      <a class="nav-link" category="Concealer" href="products.html?category=Concealer">CONCEALER</a>
+      <a class="nav-link" category="Mascaror" href="products.html?category=Mascaror">MASCAROR</a>
+      <a class="nav-link" category="Rouge" href="products.html?category=Rouge">ROUGE</a>
+      <a class="nav-link" category="Puder" href="products.html?category=Puder">PUDER</a>
+      <a class="nav-link" category="Läppstift" href="products.html?category=Läppstift">LÄPPSTIFT</a>
+      <a class="nav-link" category="Pennor" href="products.html?category=Pennor">PENNOR</a>
     </div>
   </div>
 </nav>

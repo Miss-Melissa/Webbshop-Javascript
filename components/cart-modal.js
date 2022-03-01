@@ -115,7 +115,7 @@ class CartModal extends HTMLElement {
         // --------------------------------------------------------------------
         // SHOW PRODUCT
         function showProduct() {
-            productQty.innerHTML = `Du har ${getQty()} produkt(er) i din varukorg`
+            productQty.innerHTML = `Du har ${getQty()} produkter i din varukorg`
             let productStr = ""
             //Produktinnehållet i cart (per produkt)
             for (let i = 0; i < cart.length; i += 1) {
@@ -125,12 +125,12 @@ class CartModal extends HTMLElement {
                 <li class="li-item">
                     <div class="product-img-name">
                         <img referrerpolicy="no-referrer" src="${thumbnail}">
-                        <span class="img-li-description">${title} ${price} x ${qty} = ${qty * price}kr</span>
+                        <span class="img-li-description">${qty}st ${title}: ${qty * price}kr</span>
                     </div>
                     <div class="product-btns-li">
                         <button class="remove-one btn btn-secondary" data-id="${id}">-</button>
                         <button class="add-one btn btn-secondary" data-id="${id}">+</button>
-                        <button class="remove btn btn-danger" data-id="${id}">Ta bort</button>
+                        <button class="remove btn btn-danger" data-id="${id}"><span class="close">&times;</span></button>
                     </div>
                 </li>
                 `

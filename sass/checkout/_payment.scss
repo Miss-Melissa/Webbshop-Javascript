@@ -21,10 +21,25 @@
   .buttoncenter {
     display: flex;
     justify-content: center;
+
     .btn1 {
-      background-color: $c1-blue;
+      background-color: $c1-gold;
       width: 81rem;
       margin-bottom: 2rem;
+      color: $color;
+      border-radius: 12px;
+      height: 45px;
+      border: none;
+
+      &:hover {
+        color: $color;
+        background-color: rgba(209, 181, 24, 0.51);
+      }
+
+      &:focus {
+        color: $color;
+        background-color: rgba(209, 181, 24, 0.51);
+      }
     }
   }
 }

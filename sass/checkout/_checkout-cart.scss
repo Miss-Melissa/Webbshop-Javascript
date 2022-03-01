@@ -1,9 +1,19 @@
 .margin-rubrik {
-  margin-bottom: 1%;
+  margin-bottom: 3%;
+
+  @include responsive(tab-port) {
+    margin-bottom: 5%;
+  } 
 }
 
 .container-kundvagn {
-  margin-top: 176px;
+  margin-top: 300px;
+
+
+  @include responsive(tab-port) {
+    margin-top: 250px;
+  }
+
 
   .listItems {
     margin-left: -2.375rem;
@@ -14,22 +24,14 @@
     margin-top: 0 !important;
     font-size: 1rem;
   }
-
-  small {
-    color: #6c757d !important;
-  }
-
-  .muted {
-    color: #6c757d !important;
-  }
 }
 
-.green {
-  color: #28a745 !important;
+.pink {
+  color: $c3-light-pink!important;
 }
 
-.span-green {
-  color: #28a745 !important;
+.span-pink {
+  color:$c3-light-pink!important;
 }
 
 .shoppingItems {
@@ -51,8 +53,8 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: whitesmoke;
+    color: $c1-grey;
+    background-color: $color;
     background-clip: padding-box;
     border: 0.063rem solid #ced4da;
     border-radius: 0.25rem;
@@ -63,11 +65,11 @@
 }
 
 .btn2 {
-  background-color: $c1-blue;
-  border-color: $c1-blue;
+  background-color: $c1-gold;
+  border-color: $c1-gold;
   display: inline-block;
   font-weight: 400;
-  color: whitesmoke;
+  color: $color;
   text-align: center;
   border: 0.063rem solid transparent;
   padding: 0.375rem 0.75rem;
@@ -76,12 +78,22 @@
   border-radius: 0.25rem;
   margin-top: 0rem;
   position: inherit;
+
+  &:hover {
+    color: $color;
+    background-color: rgba(209, 181, 24, 0.51);
+  }
+
+  &:focus {
+    color: $color;
+    background-color: rgba(209, 181, 24, 0.51);
+  }
 }
 
 .container {
   .produkt-1 {
     color: #fff;
-    background-color: $c3-light-grey;
+    background-color: $c3-light-pink;
     border-radius: 10rem;
     display: inline-block;
     padding: 0.25em 0.4em;
@@ -103,7 +115,7 @@
       text-align: center;
       background-color: #fff;
       border: 1px solid rgba(0, 0, 0, 0.125);
-      border-bottom: 0 solid whitesmoke;
+      border-bottom: 0 solid $color;
       padding: 20px;
 
     .p-img {

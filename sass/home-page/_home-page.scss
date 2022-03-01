@@ -1,83 +1,84 @@
-.main-container {
+body {
+  background-color: whitesmoke;
+
+  .main-container {
     text-align: center;
     margin: auto;
     max-width: $breakpoint-max;
+    background-color: $color;
 
     .products-container {
-        margin: 0;
+      margin: 0;
     }
 
     h1 {
-        padding: 20px 0;
+      padding: 20px 0;
     }
-}
+  }
 
-.carousel-container {
+  .carousel-container {
     margin: auto;
-    margin-top: 156px;
-    background-color: $c2-dark-grey;
+    margin-top: 215px;
+    background-color: $color;
 
     .carousel {
-        margin: auto;
-        max-width: $breakpoint-max;
+      margin: auto;
+      max-width: $breakpoint-max;
     }
 
     .carousel-item {
-        height: 400px;
+      height: 400px;
     }
 
     .d-block {
-        object-fit: cover;
-        height: 100%;
-        vertical-align: middle;
-        border: $c2-dark-grey solid 20px;
+      object-fit: cover;
+      height: 100%;
+      vertical-align: middle;
+      border: $color-white solid 20px;
     }
-}
+  }
 
-@media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 1100px) {
     .main-container {
-        
-        .products-container *:last-child {
-            display: none;
-        }
-
+      .products-container *:last-child {
+        display: none;
+      }
     }
-}
+  }
 
-@media only screen and (max-width: 829px) {
+  @media only screen and (max-width: 829px) {
     .main-container {
-        
-        .products-container *:last-child {
-            display: block;
-        }
-
+      .products-container *:last-child {
+        display: block;
+      }
     }
-}
+  }
 
-@media only screen and (max-width: $breakpoint-desktop) {
-    .main-container{
-        p {
-            margin: 0 20px;
-        } 
+  @media only screen and (max-width: $breakpoint-desktop) {
+    .main-container {
+      p {
+        margin: 0 20px;
+      }
     }
 
     .carousel-container {
-        margin-top: 93px;
+      margin-top: 220px;
     }
 
     .d-block {
-        border: 0px solid black!important;
+      border: 0px solid black !important;
     }
-}
+  }
 
-@media only screen and (max-width: $breakpoint-ipad) {
+  @media only screen and (max-width: $breakpoint-ipad) {
     .carousel-item {
-        height: 300px!important;
+      height: 300px !important;
     }
-}
+  }
 
-@media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 560px) {
     .carousel-item {
-        height: 200px!important;
+      height: 200px !important;
     }
+  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "wie-gaming",
   "version": "0.0.1",
-  "description": "",
+  "description": "<!--",
   "main": "index.js",
   "scripts": {
     "start": "npm run build-css & node-sass ./sass/style.scss ./css/style.css -rw ./sass --output-style compressed",
@@ -11,7 +11,7 @@
   "author": "Grupp 4",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^7.0.0"
+    "node-sass": "^7.0.1"
   },
   "repository": {
     "type": "git",

@@ -9,13 +9,13 @@ var product = new ProductTemplate();
 const ph = new ProductHandler();
 //Anger kategorier
 const productCategories = [
-    'Skärmar',
-    'Tangentbord',
-    'Möss',
-    'Konsoler',
-    'Gamingstolar',
-    'Musmattor',
-    'Hörlurar'
+    'Concealer',
+    'Foundation',
+    'Mascaror',
+    'Rouge',
+    'Puder',
+    'Läppstift',
+    'Pennor'
 ];
 //Hämtar form från admin.html som object
 const form = {

@@ -1,169 +1,175 @@
 @import "../variable.scss";
+@import "../checkout/breakpoints";
+
 //mobile first
 .product-landing-page {
-    margin: auto;
-    margin-top: 176px;
-    max-width: $breakpoint-max;
+  margin: auto;
+  margin-top: 300px;
+  max-width: $breakpoint-max;
 
-    .product-title1 {
-        margin: 2rem 2rem 2rem;
-        width:100%;
-        font-size: 2.3rem;
-    }
-    
-    .product-img-div {
-        width: 50%;
-        margin: 0 auto;
-        height: 20rem;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-    }
-    
-    .product-img1 {
-        // tar bort vita backgrunden på bilden
-        mix-blend-mode: multiply;  
-        height: 100%;
-        width: auto;
-    }
-    
-    .product-aside {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .product-price1{
-        color: $c4-red;
-        font-size: 2rem;
-    }
-    
-    .product-btns {
-        margin: 2rem auto 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-    }
-    
-    .add-cart {
-        background-color: $c1-blue;
-        color: whitesmoke; 
-        margin-bottom: 2rem;
-        padding: 1rem;
-        width: 100%;
-        font-size:1.2rem;
-    }
-    
-    .fa-heart {
-        cursor: pointer;
-        font-size: 3rem;
-        text-decoration: none;
-    }
-    
-    .fa-heart:active {
-        color: $c4-red;
-    }
-    
-    .fa-heart:visited {
-        color: $c4-red;
-    }
-    
-    .product-stock1 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
-    }
-    
-    .section-description {
-        margin-left: 2rem;
-        margin-right:2rem;
-    }
-    
-    .product-description1 {
-        margin-bottom: 1rem;
-    }
-    
-    .product-articleno {
-        margin-top: 3rem;
-        margin-bottom: 5rem;
-    }
+  @include responsive(tab-port) {
+    margin-top: 250px;
+  }
+
+  .product-title1 {
+    margin: 2rem 2rem 2rem;
+    width: 100%;
+    font-size: 2.3rem;
+  }
+
+  .product-img-div {
+    width: 50%;
+    margin: 0 auto;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .product-img1 {
+    // tar bort vita backgrunden på bilden
+    mix-blend-mode: multiply;
+    height: 100%;
+    width: auto;
+  }
+
+  .product-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-price1 {
+    font-size: 2rem;
+  }
+
+  .product-btns {
+    margin: 2rem auto 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .add-cart {
+    background-color: $c1-gold;
+    color: $color;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: none;
+  }
+
+  .fa-heart {
+    cursor: pointer;
+    font-size: 3rem;
+    text-decoration: none;
+ 
+  }
+
+  .fa-heart:active {
+    color: rgba(209, 181, 24, 0.185);
+  }
+
+  .fa-heart:visited {
+    color: $c1-gold;
+  }
+
+  .product-stock1 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .section-description {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .product-description1 {
+    margin-bottom: 1rem;
+  }
+
+  .product-articleno {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
 }
 
 @media screen and (min-width: $breakpoint-ipad) {
-    .product-landing-page{
-
-        .product-title1 {
-            font-size: 4.5rem;
-        }
-
-        .product-img-div {
-            height: 30rem;
-        } 
-
-
-        .product-price1{
-            font-size: 4rem;
-        }
-
-        .add-cart {
-            font-size: 2rem;
-        }
-
-        .fa-heart {
-            margin-top: 2rem;
-            font-size:3.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-stock1 {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-description {
-            font-size: 1.5rem;
-        }
+  .product-landing-page {
+    .product-title1 {
+      font-size: 4.5rem;
     }
+
+    .product-img-div {
+      height: 30rem;
+    }
+
+    .product-price1 {
+      font-size: 4rem;
+    }
+
+    .add-cart {
+      font-size: 2rem;
+    }
+
+    .fa-heart {
+      margin-top: 2rem;
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .product-stock1 {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-description {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
-    .product-landing-page{
-        .product-wrapper {
-            display: flex;
-            margin-bottom: 2rem;
-        }
-
-        .product-img-div {
-            width: 50%;
-            height: 28rem;
-        }
-
-        .product-aside {
-            width: 50%;
-        }
-
-        .product-stock1 {
-            font-size: 1.8rem;
-            margin-top: -1rem;
-        }
-
-        .section-description {
-            margin-top: 3rem;
-            font-size: 1.6rem;
-        }
+  .product-landing-page {
+    .product-wrapper {
+      display: flex;
+      margin-bottom: 2rem;
     }
+
+    .product-img-div {
+      width: 50%;
+      height: 28rem;
+    }
+
+    .product-aside {
+      width: 50%;
+    }
+
+    .product-stock1 {
+      font-size: 1.8rem;
+      margin-top: -1rem;
+    }
+
+    .section-description {
+      margin-top: 3rem;
+      font-size: 1.6rem;
+    }
+  }
 }
 
 @media screen and (min-width: $breakpoint-max) {
-    .product-landing-page{
-        .product-img-div {
-            height: 41rem;
-            width: 60%;
-        }
-
-        .product-aside {
-            width: 40%;
-        }
+  .product-landing-page {
+    .product-img-div {
+      height: 41rem;
+      width: 60%;
     }
+
+    .product-aside {
+      width: 40%;
+    }
+  }
 }

@@ -1,10 +1,12 @@
+
+
 .fa-shopping-cart {
     padding: 10px 20px;
-    color: $color-whitesmoke;
+    color: $color-white;
 }
 
 .fa-shopping-cart:hover {
-    background-color: $c2-dark-grey;
+    background-color: $c3-light-pink;
 }
 
 // nedan är alltså hela ytan när man trycker på knappen, inte själva varukorgen.
@@ -18,10 +20,11 @@
     height: 100%; // hela skärmen
     overflow: auto;  // gör så att sidan förlängs om det finns massa innehåll.
     background-color: rgba(151, 143, 143, 0.5); // opacity 0.5
+    
 }
 
 .varukorg-modal-content {
-    background-color: whitesmoke;
+    background-color: white;
     margin: 5% auto;
     width: 95%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17); 
@@ -38,7 +41,7 @@
 
 .modal-header {
     padding: 2rem;
-    background-color: $c1-blue;
+    background-color:$c3-light-pink;
 }
 
 .modal-header > h2 {
@@ -113,6 +116,20 @@
         .purchase-button {
             margin-bottom: 2rem;
             width: 18rem;
+            background-color: $c1-gold;
+            border-radius: 12px;
+            border: none;
+
+            &:hover {
+                color: $color;
+                background-color: rgba(209, 181, 24, 0.51);
+              }
+        
+              &:focus {
+                color: $color;
+                background-color: rgba(209, 181, 24, 0.51);
+              }
+
         }
     }
 }

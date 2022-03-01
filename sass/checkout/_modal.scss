@@ -10,41 +10,43 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.294); /* Black w/ opacity */
-  margin-top: 88px;
+  margin-top: 134px;
+ 
+ 
 
+  @include responsive(tab-land) {
+    margin-top: 140px;
+  }
   @include responsive(tab-port) {
-    margin-top: 40px;
+    margin-top: 70px;
   }
 
-  @include responsive(phone) {
-    margin-top: 40px;
-  }
+
 
   /* Modal Content */
   .modal-content-checkout {
     overflow: auto;
-    background-color: whitesmoke;
+    background-color: $color;
     margin: auto;
     font-family: $fontFamily;
     padding: 6.25rem;
-    border: 0.063rem solid #888;
+    border: 0.063rem solid $c1-grey;
     border-radius: 2%;
     width: 50rem;
-    height: 31.25rem;
+    height: 27rem;
 
     @include responsive(tab-land) {
       width: 50rem;
-      height: 31.25rem;
+     
     }
 
     @include responsive(tab-port) {
       width: 37.5rem;
-      height: 31.25rem;
+      height: 32rem;
     }
 
     @include responsive(phone) {
       width: 18.75rem;
-      height: 31.25rem;
     }
 
     .infotext {
@@ -69,7 +71,7 @@
       font-size: 120%;
 
       @include responsive(phone) {
-        font-size: 1rem;
+        font-size: 16px;
       }
     }
 
@@ -85,7 +87,7 @@
     }
 
     .close {
-      color: #6e7371;
+      color: $c1-grey;
       float: right;
       font-size: 2rem;
       font-weight: bold;
@@ -95,7 +97,7 @@
 
     .close:hover,
     .close:focus {
-      color: $c3-light-grey;
+      color: $c1-grey;
       text-decoration: none;
       cursor: pointer;
     }

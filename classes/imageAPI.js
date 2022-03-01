@@ -13,7 +13,7 @@ class ImageAPI {
     async getImage(id) {
         if (!id) return;
         id = id.includes("imgur") ? id.split("com/")[1] : id;
-        return await fetch('https://api.imgur.com/3/account/wie21sGrupp4/image/' + id, {
+        return await fetch('https://api.imgur.com/3/account/melissashulilu24/image/' + id, {
             method: 'GET',
             headers: this.headers
         }).then(response => response.json())

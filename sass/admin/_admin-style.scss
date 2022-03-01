@@ -1,6 +1,6 @@
 .admin-container {
     margin: auto;
-    margin-top: 176px;
+    margin-top: 220px;
     max-width: 1200px;
     padding: 1rem;
 
@@ -50,7 +50,7 @@
 
     @media only screen and (max-width: $breakpoint-desktop) {
         .admin-container {
-            margin-top: 115px;
+            margin-top: 150px;
         }
 
         .col-container {

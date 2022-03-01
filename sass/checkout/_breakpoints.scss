@@ -6,7 +6,7 @@
 
 
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 768px) {
             @content
         }
 
@@ -18,7 +18,7 @@
 
 
 
-        @media only screen and (max-width: 900px) {
+        @media only screen and (max-width: 970px) {
             @content
         }
 
@@ -30,7 +30,7 @@
 
 
 
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (max-width: 1200px) {
             @content
         }
 

@@ -1,0 +1,46 @@
+.productpage-container{
+    display: flex;
+    justify-content: center;
+}
+.productpage{
+    min-width: 500px;
+    min-height: 400px;
+    width: 50px;
+    overflow: hidden;
+    border: solid 1px #eee;
+    padding: 300px;
+    box-shadow: 2px 8px 20px #ddd;
+    margin: 20px;
+    transition: 0.5s linear;
+  
+}
+
+.image-product{
+    display: flex;
+    justify-content: center;
+}
+
+.title-product{
+    display: flex;
+    justify-content: center;
+}
+
+.price-product{
+    text-align: end;
+}
+
+.info-product{
+    text-align: center;
+}
+
+
+
+.btn-position{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-product{
+  padding: 1%;
+  width: 50%;
+}

@@ -1,0 +1,26 @@
+.homePage-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    border: solid 190px rgba(211, 211, 211, 0.205);
+    display: flex;
+    justify-content: center;
+
+}
+
+.img:hover {
+background: rgba(211, 211, 211, 0.210);    
+
+}
+
+.shoppingcart-img:hover {
+background: rgba(211, 211, 211, 0.210);
+}
+
+.product-info-home{
+  display: flex;
+  justify-content: center;
+
+}
